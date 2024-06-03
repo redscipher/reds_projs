@@ -1,0 +1,120 @@
+/* resete da pagina */
+* {
+    color: BLACK;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* estilizacoes pais ( gerais ) */
+section {
+    padding:  16px 0;
+}
+
+/* estilizacoes: filhos diretos */
+body > header {
+    background-color: #2f3640;
+    padding: 16px 0;
+    color: #f5f6fa;
+}
+
+/* == estilizacoes descendentes
+    nivel 1 */
+header li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+section h2 {
+    margin-bottom: 16px;
+    font-size: 32px;
+}
+
+/* nivel 2 */
+header li a {
+    color: #f5f6af;
+    text-decoration: none;
+}
+
+/* == estilizacoes: classes */
+.container {
+    width: 1366px;
+    margin: 0px auto 0px auto;
+}
+
+.artigos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* == estilizacoes: descendentes de classes
+    pais ( gerais ) */
+.artigos article {
+    width: 30%;
+    margin-bottom: 16px;
+}
+
+.artigos p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* nivel 1 */
+.artigos article img {
+    /*height: 180px;*/
+    width: 100%;
+}
+
+.artigos article h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.artigos article a {
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* estados */
+.artigos article a:hover {
+    text-decoration: underline;
+}
+
+/* == estilizacoes: classes descendentes de elementos */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* == estilizacoes: IDs */
+#sctEsportes {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#sctEconomia {
+    background-color: #f5f6af;
+}
+
+/* estilizacoes: classes de IDs
+    nivel 1 */
+#sctEsportes .artigos article a {
+    background-color: rgba(0, 255, 0, 0.8);
+    color: #000;
+}
+
+#sctEconomia .artigos article a {
+    background-color: rgba(200, 193, 100, 0.662);
+    color: #000;
+}
