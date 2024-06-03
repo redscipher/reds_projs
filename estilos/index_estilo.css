@@ -13,9 +13,9 @@ section {
 
 /* estilizacoes: filhos diretos */
 body > header {
-    background-color: #2f3640;
+    background-color: #05398286;
     padding: 16px 0;
-    color: #f5f6fa;
+    color: #accc0d;
 }
 
 /* == estilizacoes descendentes
@@ -36,8 +36,9 @@ section h2 {
 
 /* nivel 2 */
 header li a {
-    color: #f5f6af;
+    color: #fff;
     text-decoration: none;
+    font-size: 18px;
 }
 
 /* == estilizacoes: classes */
@@ -99,12 +100,20 @@ header .container {
 }
 
 /* == estilizacoes: IDs */
-#sctEsportes {
+#sctEsportes, #idEsportes {
     background-color: rgba(0, 255, 0, 0.1);
 }
 
-#sctEconomia {
-    background-color: #f5f6af;
+#sctEconomia, #idEconomia {
+    background-color: #f5f6af50;
+}
+
+#sctEntretenimento, #idEntretenimento {
+    background-color: #33f4da3a;
+}
+
+#sctTecnologia, #idTecnologia {
+    background-color: #61089529;
 }
 
 /* estilizacoes: classes de IDs
@@ -116,5 +125,15 @@ header .container {
 
 #sctEconomia .artigos article a {
     background-color: rgba(200, 193, 100, 0.662);
+    color: #000;
+}
+
+#sctEntretenimento .artigos article a {
+    background-color: #33f4daef;
+    color: #000;
+}
+
+#sctTecnologia .artigos article a {
+    background-color: #6108958b;
     color: #000;
 }
