@@ -116,8 +116,8 @@ header .container {
     background-color: #61089529;
 }
 
-/* estilizacoes: classes de IDs
-    nivel 1 */
+/* estilizacoes: classes descendentes de IDs
+    nivel 2 */
 #sctEsportes .artigos article a {
     background-color: rgba(0, 255, 0, 0.8);
     color: #000;
