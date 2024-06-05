@@ -6,7 +6,7 @@
 }
 
 /* == elementos: pais */
-header {
+header, footer {
     padding: 16px 0;
     background-color: #182C61;
     color: #ecf0f1;
@@ -17,7 +17,7 @@ section {
     color: #182C61;
 }
 
-body {
+body, input, textarea {
     font-family: "Roboto", sans-serif;
 }
 
@@ -27,13 +27,14 @@ input:focus, textarea:focus {
 }
 
 /* == mistos -> raiz + elementos nivel 1*/
-header, section h2 {
+header, button, section h2, section h3 {
     font-family: "Bungee", cursive;
+    font-weight: normal;
 }
 
 /* == elementos: nivel 1*/
-header h1, section h2 {
-    font-weight: normal;
+section h3 {
+    margin-bottom: 16px;
 }
 
 section h2 {
