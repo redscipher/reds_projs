@@ -17,12 +17,25 @@ section {
     color: #182C61;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 /*>estados*/
 input:focus, textarea:focus {
     outline-color: #182C61;
 }
 
+/* == mistos -> raiz + elementos nivel 1*/
+header, section h2 {
+    font-family: "Bungee", cursive;
+}
+
 /* == elementos: nivel 1*/
+header h1, section h2 {
+    font-weight: normal;
+}
+
 section h2 {
     margin-bottom: 16px;
 }
@@ -81,8 +94,23 @@ header nav li a {
 
 .contact-methods {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
+
+/*fontes*/
+.bungee-regular {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 /*classes: elementos pais*/
 .brands-list img {
