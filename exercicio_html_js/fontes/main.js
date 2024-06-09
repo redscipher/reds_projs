@@ -20,13 +20,7 @@ let validaNumeros = function(num1, num2){
     console.log('numero 2 eh: ' + num2);
     console.log('numero 1 eh: ' + num1);
     //formulario sera valido caso o num2 > num1.
-    if (num2>num1) {
-        console.log('lado verdadeiro');
-        flgValido = true;
-    }else{
-        console.log('lado falso');
-        flgValido = false;
-    }
+    flgValido = num2 > num1 ? true : false;
     //def retorno
     console.log('portanto eh: ' + flgValido);
     return flgValido;
