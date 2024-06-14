@@ -14,18 +14,6 @@ console.log(pValidacao);
 console.log(clsValidacao);
 
 // == funcoes
-let validaNumeros = function(num1, num2){
-    //variavel retorno
-    let flgValido;
-    console.log('numero 2 eh: ' + num2);
-    console.log('numero 1 eh: ' + num1);
-    //formulario sera valido caso o num2 > num1.
-    flgValido = num2 > num1 ? true : false;
-    //def retorno
-    console.log('portanto eh: ' + flgValido);
-    return flgValido;
-}
-
 let exibeMensagemUsuario = function(formValido){
     console.log(formValido);
     //remove classes
@@ -40,6 +28,36 @@ let exibeMensagemUsuario = function(formValido){
         //exibe mensagem de erro
         clsValidacao.classList.add('erro');
         pValidacao.innerHTML = '<p>Aviso: O campo B tem de ser maior que o campo A.</p>';
+    }
+}
+
+let validaNumeros = function(num1, num2){
+    //variavel retorno
+    let flgValido;
+    console.log('numero 2 eh: ' + num2);
+    console.log('numero 1 eh: ' + num1);
+    //formulario sera valido caso o num2 > num1.
+    flgValido = num2 > num1 ? true : false;
+    //def retorno
+    console.log('portanto eh: ' + flgValido);
+    return flgValido;
+}
+
+let ValidaFormulario = function(e){
+    //desabilita seguir com acao padrao do evento
+    e.preventDefault();
+    //variaveis
+    let formValidoFinal;
+    //valida informacoes
+    formValidoFinal = validaDados
+    //reseta formulario caso esteja valido
+    if (formValidoFinal) {
+        elem1.value = '';
+        elem2.value = '';
+        pValidacao.value = '';
+        // esconde classe
+        clsValidacao.classList.remove('erro');
+        clsValidacao.classList.remove('sucesso');
     }
 }
 
@@ -62,24 +80,6 @@ let validaDados = function(e){
     exibeMensagemUsuario(formValido);
     // def retorno
     return formValido;
-}
-
-let ValidaFormulario = function(e){
-    //desabilita seguir com acao padrao do evento
-    e.preventDefault();
-    //variaveis
-    let formValidoFinal;
-    //valida informacoes
-    formValidoFinal = validaDados
-    //reseta formulario caso esteja valido
-    if (formValidoFinal) {
-        elem1.value = '';
-        elem2.value = '';
-        pValidacao.value = '';
-        // esconde classe
-        clsValidacao.classList.remove('erro');
-        clsValidacao.classList.remove('sucesso');
-    }
 }
 
 //adiciona um ouvinte de evento

@@ -1,0 +1,42 @@
+/* resete */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* elementos: pais */
+body{
+    display: block;
+    /* cor de fundo */
+    background-color: #fff;
+}
+
+header{
+    background-color: #212b7aee;
+    color: #ffffffaa;
+    /* margens */
+    padding: 10px 10px;
+    margin: 1px 0;
+}
+    
+
+/* elementos: nivel 1 */
+
+/* elementos: nivel 2 */
+
+/* classes: pais */
+.clsPrincipal{
+    width: 1366px;
+    /* margens */
+    margin: 0px auto 0px auto;
+}
+
+/* classes de elementos: pais */
+header .clsPrincipal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* IDs: pais */
