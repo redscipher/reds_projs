@@ -130,7 +130,7 @@ form button:hover{
 
 .clsValidacao{
     /* nao exibe no comeco */
-    display: block;
+    display: none;
     /* ---------------------- */
     width: 31.5%;
     /* centraliza texto */
