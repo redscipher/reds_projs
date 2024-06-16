@@ -11,7 +11,7 @@ body{
     /* cor de fundo */
     background-color: #F7EFDB;
     /* imagem de fundo */
-    background-image: url('/exercicio_jquery/imagens/lista-de-tarefas.jpg');
+    background-image: url('./imagens_css/lista-de-tarefas.jpg');
     background-size: 446px 577px;
     background-repeat: no-repeat;
     background-position: 762px;
