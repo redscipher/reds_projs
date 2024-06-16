@@ -16,7 +16,7 @@ body{
     background-repeat: no-repeat;
     background-position: 762px;
     /* deixa transparente */
-    opacity: 0,8;
+    opacity: 0.8;
     /* Garante que o fundo fique atrás do conteúdo */
     z-index: -1; 
 }
