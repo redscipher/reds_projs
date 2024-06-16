@@ -211,27 +211,6 @@ footer .clsPrincipal{
     justify-content: space-between;
 }
 
-/* elementos descendem classes: pais */
-/* .clsEntradaForm input{ */
-    /* width: 80%; */
-    /* margens */
-    /* padding: 10px 5px; */
-    /* coloca bordas mais simples */
-    /* border: 2px solid #00000024; */
-    /* border-radius: 5px; */
-/* } */
-
-/* .clsEntradaForm label{ */
-    /* margin-right: 10px; */
-    /* fonte */
-    /* font-size: 20px; */
-/* } */
-
-/* estados */
-/* .clsEntradaForm input:focus{ */
-    /* outline-color: #212b7ad2; */
-/* } */
-
 /* IDs: pais */
 #idh2Lista{
     width: 50%;
