@@ -9,7 +9,16 @@
 body{
     display: block;
     /* cor de fundo */
-    background-color: #fff;
+    background-color: #F7EFDB;
+    /* imagem de fundo */
+    background-image: url('/exercicio_jquery/imagens/lista-de-tarefas.jpg');
+    background-size: 446px 577px;
+    background-repeat: no-repeat;
+    background-position: 762px;
+    /* deixa transparente */
+    opacity: 0,8;
+    /* Garante que o fundo fique atrás do conteúdo */
+    z-index: -1; 
 }
 
 header
@@ -36,7 +45,7 @@ footer{
 }
 
 main{
-    height: 660px;
+    height: 580px;
     /* fontes */
     font-family: "Spicy Rice", cursive;
     font-weight: 100;
@@ -44,48 +53,54 @@ main{
 }
 
 h2{
-    color: #e48628;
+    color: #000;
     /* fonte */
-    font-family: "Cinzel", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Spicy Rice", serif;
     font-weight: bold;
-    font-style: italic;
-    font-size: 22px;
+    font-style: normal;
+    font-size: 26px;
     /* tamanho */
     padding: 10px 10px;
-    margin: 10px 10px;
+    margin: 10px 150px;
 }
 
 form{
-    width: 50%;
-    /* faz todos os itens aparecerem um do lado do outro */
-    display: inline-flex;
+    width: 40%;
     /* margens */
     padding: 10px 10px;
-    margin: 10px 10px;
+    margin: 10px 150px;
+    /* faz todos os itens aparecerem um do lado do outro */
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 ol{
-    width: 50%;
+    width: 30%;
     /* margens */
-    padding: 10px 10px;
+    padding: 30px 20px;
     margin: 10px 10px;
    /* altura máxima de 100% da altura da tela */
-    max-height: 40vh;
+    max-height: 60vh;
     /* adiciona rolagem se necessário */
     overflow: auto;
 }
     
 /* elementos: nivel 1 */
 ol li{
-    padding: 5px 10px;
-    margin: 5px 10px;
+    padding: 2px 2px;
+    margin: 2px 2px;
     /* centraliza os itens */
     text-align: center;
 }
 
+form input{
+    width: 60%;
+}
+
 form button{
     width: 20%;
+    /* tamanho */
+    height: 30px;
     /* bordas arrendondada */
     border-radius: 5px;
     border: 2px solid #1a5e0b74;
@@ -93,7 +108,7 @@ form button{
     background-color: #1a5e0bd0;
     color: #ffffffaa;
     /* fonte */
-    font-size: 20px;
+    font-size: 14px;
     /* aparecera um cursor ao passsa o mouse em cima */
     cursor: pointer;
 }
@@ -113,15 +128,11 @@ form button:hover{
     margin: 0px auto 0px auto;
 }
 
-.clsEntradaForm{
-    width: 80%;
-}
-
 .clsValidacao{
     /* nao exibe no comeco */
-    display: none;
+    display: block;
     /* ---------------------- */
-    width: 50%;
+    width: 31.5%;
     /* centraliza texto */
     text-align: center;
     /* bordas */
@@ -130,10 +141,10 @@ form button:hover{
     background-color: rgba(255, 0, 0, 0.178);
     border-radius: 5px;
     /* tamanhos */
-    padding: 10px 10px;
-    margin: 10px 10px;
+    padding: 5px 5px;
+    margin: 5px 150px;
     /* fonte */
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Cinzel", cursive;
     font-style: normal;
 }
@@ -150,14 +161,15 @@ form button:hover{
 
 /* elementos descendem classes: pais */
 .clsListaItens button{
-    background-color: red;
-    color: #fff;
+    background-color: #fa444493;
+    color: #000;
     /* arredonda bordas */
     border-radius: 5px;
     border: none;
     /* tamanho */
     padding: 5px 5px;
     margin: 5px 5px;
+    opacity: 0.1;
 }
 
 .clsListaItens h4{
@@ -167,7 +179,9 @@ form button:hover{
 
 /* estados */
 .clsListaItens button:hover{
-    background-color: rgba(255, 0, 0, 0.503);
+    background-color: #fa4444d4;
+    color: #000;
+    opacity: 1;
 }
 
 /* classes descendem elementos: pais */
@@ -182,9 +196,14 @@ header .clsPrincipal
 }
 
 main .clsPrincipal{
-    flex-direction: column;
-    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    align-items: start;
     /* ocupar toda tela */
+    width: 80%;
     height: 100%;
 }
 
@@ -193,26 +212,25 @@ footer .clsPrincipal{
 }
 
 /* elementos descendem classes: pais */
-.clsEntradaForm input{
-    width: 80%;
+/* .clsEntradaForm input{ */
+    /* width: 80%; */
     /* margens */
-    margin-left: 10px;
-    padding: 10px 5px;
+    /* padding: 10px 5px; */
     /* coloca bordas mais simples */
-    border: 2px solid #00000024;
-    border-radius: 5px;
-}
+    /* border: 2px solid #00000024; */
+    /* border-radius: 5px; */
+/* } */
 
-.clsEntradaForm label{
-    margin-right: 10px;
+/* .clsEntradaForm label{ */
+    /* margin-right: 10px; */
     /* fonte */
-    font-size: 20px;
-}
+    /* font-size: 20px; */
+/* } */
 
 /* estados */
-.clsEntradaForm input:focus{
-    outline-color: #212b7ad2;
-}
+/* .clsEntradaForm input:focus{ */
+    /* outline-color: #212b7ad2; */
+/* } */
 
 /* IDs: pais */
 #idh2Lista{
