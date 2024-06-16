@@ -34,7 +34,12 @@ let inicializaJQuery = function(){
                     // insere no vetor
                     vAtividades.push(eAtividade.val());
                     // monta novo item
-                    novoItem = $(`<li>${eAtividade.val()}</li>`);
+                    novoItem = $(`<li>
+                    <div class="clsListaItens">
+                        <h4>${eAtividade.val()}</h4>
+                        <button>X</button>
+                    </div>
+                    </li>`);
                     //adiciona na lista
                     olLista.append(novoItem);
                     //reseta os campos
@@ -53,7 +58,8 @@ let inicializaJQuery = function(){
 
         let riscarItem = function(e){
             try {
-                // pega o item que possui foco
+                //---- 'this' faz referencia ao objeto alvo do evento, de trata do seu endereco na memoria, um ponteiro
+                // adiciona css ao elemento do evento
                 $(this).css({'text-decoration': 'line-through'});
 
             } catch (error) {
@@ -61,6 +67,14 @@ let inicializaJQuery = function(){
             }
         }
 
+        let removerItem = function(e){
+            try {
+                //remove o item + proximo do botao
+                $(this).closest('li').remove();
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
 
         //eventos
         $('#ifFrm').submit(adicionaItem);
@@ -71,7 +85,9 @@ let inicializaJQuery = function(){
         //$('ol li').click(riscarItem);
         //=============================
         // adicionando o evento dinamicamente na lista, p/ todos os itens, atuais e futuros
-        olLista.on('click', 'li', riscarItem);
+        olLista.on('click', 'li h4', riscarItem);
+        // adciona um evento dinamicamente p/ efetua a delecao de um item da lista
+        olLista.on('click', 'li button', removerItem)
     } catch (error) {
         console.log(error.message);
     }

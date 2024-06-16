@@ -70,6 +70,9 @@ ol{
     /* margens */
     padding: 10px 10px;
     margin: 10px 10px;
+    /* posicao */
+    position: relative;
+    left: 5%;
 }
     
 /* elementos: nivel 1 */
@@ -134,6 +137,37 @@ form button:hover{
     font-style: normal;
 }
 
+.clsListaItens{
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* tamanho */
+    width: 50%;
+}
+
+/* elementos descendem classes: pais */
+.clsListaItens button{
+    background-color: red;
+    color: #fff;
+    /* arredonda bordas */
+    border-radius: 5px;
+    border: none;
+    /* tamanho */
+    padding: 5px 5px;
+    margin: 5px 5px;
+}
+
+.clsListaItens h4{
+    font-family: "Teko", sans-serif;
+    font-weight: 500;
+}
+
+/* estados */
+.clsListaItens button:hover{
+    background-color: rgba(255, 0, 0, 0.503);
+}
+
 /* classes descendem elementos: pais */
 header .clsPrincipal
 ,main .clsPrincipal
@@ -150,9 +184,6 @@ main .clsPrincipal{
     align-items: center;
     /* ocupar toda tela */
     height: 100%;
-    /* posicao */
-    position: relative;
-    bottom: 20%;
 }
 
 footer .clsPrincipal{
