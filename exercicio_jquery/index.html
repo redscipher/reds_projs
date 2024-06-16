@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
+    <!-- fontes online -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Spicy+Rice&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <!-- estilizacoes -->
     <link rel="stylesheet" href="/exercicio_jquery/estilos/indexEst.css">
 </head>
@@ -20,20 +28,28 @@
             <!-- legenda sobre oque o formulario precisa -->
             <h2>Crie uma lista de atividades para fazer</h2>
             <!-- formulario p/ cadastro -->
-             <form action="">
+             <form action="" id="ifFrm">
                 <div class="clsEntradaForm">
-                    <label for="">Atividade: </label>
-                    <input type="text" id="idAtividade" placeholder="Descrição da atividade">
+                    <label for="idAtividade">Atividade: </label>
+                    <input type="text" id="idAtividade" placeholder="Descrição da atividade" required>
                 </div>
                 <!-- botao p/ adicionar -->
                  <button type="submit" id="idBtnAdc">Adicionar</button>
              </form>
+             <!-- validacao de erro -->
+             <div class="clsValidacao">
+                <h4 id="idMsgValidacao"></h4>
+            </div>
+             <!-- lista nao ordenada -->
+             <h2>Lista dos itens adicinados</h2>
+             <ol id="idLista">
+             </ol>
         </div>
     </main>
     <!-- rodape -->
     <footer>
         <div class="clsPrincipal">
-            <h3>&copy; Atividade ano: 2024.</h3>
+            <h3>&copy; Atividade ano: 2024</h3>
         </div>
     </footer>
     <!-- == fontes js -->

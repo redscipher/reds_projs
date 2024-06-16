@@ -12,16 +12,93 @@ body{
     background-color: #fff;
 }
 
-header{
+header
+,footer{
     background-color: #212b7aee;
     color: #ffffffaa;
     /* margens */
     padding: 10px 10px;
     margin: 1px 0;
+    /* fonte */
+    font-size: 24px;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer{
+    background-color: #212b7ad2;
+    /* fonte */
+    font-size: 16px;
+    font-family: "Cinzel", serif;
+    font-style: normal;
+}
+
+main{
+    height: 660px;
+    /* fontes */
+    font-family: "Spicy Rice", cursive;
+    font-weight: 100;
+    font-style: normal;
+}
+
+h2{
+    color: #e48628;
+    /* fonte */
+    font-family: "Cinzel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    /* tamanho */
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+form{
+    width: 50%;
+    /* faz todos os itens aparecerem um do lado do outro */
+    display: inline-flex;
+    /* margens */
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+ol{
+    width: 50%;
+    /* margens */
+    padding: 10px 10px;
+    margin: 10px 10px;
 }
     
-
 /* elementos: nivel 1 */
+ol li{
+    padding: 5px 10px;
+    margin: 5px 10px;
+    /* centraliza os itens */
+    text-align: center;
+}
+
+form button{
+    width: 20%;
+    /* bordas arrendondada */
+    border-radius: 5px;
+    border: 2px solid #1a5e0b74;
+    /* cor */
+    background-color: #1a5e0bd0;
+    color: #ffffffaa;
+    /* fonte */
+    font-size: 20px;
+    /* aparecera um cursor ao passsa o mouse em cima */
+    cursor: pointer;
+}
+
+/* estados */
+form button:hover{
+    background-color: #1a5e0b;
+    color: #ffffffaa;
+}
 
 /* elementos: nivel 2 */
 
@@ -32,11 +109,98 @@ header{
     margin: 0px auto 0px auto;
 }
 
-/* classes de elementos: pais */
-header .clsPrincipal{
+.clsEntradaForm{
+    width: 80%;
+}
+
+.clsValidacao{
+    /* nao exibe no comeco */
+    display: none;
+    /* ---------------------- */
+    width: 50%;
+    /* centraliza texto */
+    text-align: center;
+    /* bordas */
+    border: 2px solid red;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.178);
+    border-radius: 5px;
+    /* tamanhos */
+    padding: 10px 10px;
+    margin: 10px 10px;
+    /* fonte */
+    font-size: 14px;
+    font-family: "Cinzel", cursive;
+    font-style: normal;
+}
+
+/* classes descendem elementos: pais */
+header .clsPrincipal
+,main .clsPrincipal
+,footer .clsPrincipal{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* p/ ocupar toda tela */
+    width: 100%;
+}
+
+main .clsPrincipal{
+    flex-direction: column;
+    align-items: center;
+    /* ocupar toda tela */
+    height: 100%;
+    /* posicao */
+    position: relative;
+    bottom: 20%;
+}
+
+footer .clsPrincipal{
+    justify-content: space-between;
+}
+
+/* elementos descendem classes: pais */
+.clsEntradaForm input{
+    width: 80%;
+    /* margens */
+    margin-left: 10px;
+    padding: 10px 5px;
+    /* coloca bordas mais simples */
+    border: 2px solid #00000024;
+    border-radius: 5px;
+}
+
+.clsEntradaForm label{
+    margin-right: 10px;
+    /* fonte */
+    font-size: 20px;
+}
+
+/* estados */
+.clsEntradaForm input:focus{
+    outline-color: #212b7ad2;
 }
 
 /* IDs: pais */
+
+/* fontes */
+.teko {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.spicy-rice-regular {
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+  
