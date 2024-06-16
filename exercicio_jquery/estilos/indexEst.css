@@ -70,9 +70,10 @@ ol{
     /* margens */
     padding: 10px 10px;
     margin: 10px 10px;
-    /* posicao */
-    position: relative;
-    left: 5%;
+   /* altura máxima de 100% da altura da tela */
+    max-height: 40vh;
+    /* adiciona rolagem se necessário */
+    overflow: auto;
 }
     
 /* elementos: nivel 1 */
@@ -143,7 +144,8 @@ form button:hover{
     align-items: center;
     justify-content: space-between;
     /* tamanho */
-    width: 50%;
+    width: 100%;
+    text-align: center;
 }
 
 /* elementos descendem classes: pais */
@@ -213,6 +215,9 @@ footer .clsPrincipal{
 }
 
 /* IDs: pais */
+#idh2Lista{
+    width: 50%;
+}
 
 /* fontes */
 .teko {
