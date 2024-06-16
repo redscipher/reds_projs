@@ -54,7 +54,6 @@ let inicializaJQuery = function(){
                 console.log(error.message);
             }
         }
-        
 
         let riscarItem = function(e){
             try {
@@ -69,6 +68,7 @@ let inicializaJQuery = function(){
 
         let removerItem = function(e){
             try {
+                //---- 'this' faz referencia ao objeto alvo do evento, de trata do seu endereco na memoria, um ponteiro
                 //remove o item + proximo do botao
                 $(this).closest('li').remove();
             } catch (error) {
