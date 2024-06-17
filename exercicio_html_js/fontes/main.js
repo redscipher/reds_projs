@@ -22,10 +22,12 @@ let exibeMensagemUsuario = function(formValido){
     // formulario esta valido ?
     if (formValido) {
         //exibe mensagem de sucesso
+        frmBotao.disabled = false;
         clsValidacao.classList.add('sucesso');
         pValidacao.innerHTML = '<p>Sucesso: Números válidos.</p>';
     }else{
         //exibe mensagem de erro
+        frmBotao.disabled = true;
         clsValidacao.classList.add('erro');
         pValidacao.innerHTML = '<p>Aviso: O campo B tem de ser maior que o campo A.</p>';
     }
