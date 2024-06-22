@@ -11,10 +11,17 @@
 header{
     padding: 16px 0 0;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 56px;
+}
+
+aside{
+    padding-left: 40px;
 }
 
 /* elementos: nivel 1 */
-
+section h2{
+    margin-bottom: 32px;
+}
 
 /* classes: pais */
 .container{
@@ -31,6 +38,27 @@ header{
     left: 0;
     width: 300px;
     top: 100%;
+    background-color: #fff;
+}
+
+.conteudo{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.destaque{
+    margin-bottom: 56px;
+    margin-right: 8px;
+}
+
+.noticias{
+    display: grid;
+    /* funcao 'repeat' retorna uma string, 'param1' = quantidade de vezes em que repetira 'param2', 'param2' = valor
+        ex.: repeat(5, 5%) => 5% 5% 5% 5% 5% */
+    grid-template-columns: repeat(3, 32.6%);
+    /* cria espacamentos entre as colunas */
+    column-gap: 1%;
+    row-gap: 5%;
 }
 
 /* classe criada p/ dar o espacamento abaixo do elemento que utilizou o atributo 'float' */
@@ -45,10 +73,18 @@ header .container{
     align-items: center;
 }
 
+aside .noticia{
+    margin-bottom: 24px;
+}
+
 /* .classes elementos: pais */
 .submenu li{
     display: block;
     padding: 8px;
+}
+
+.noticia img{
+    max-width: 100%;
 }
 
 /* estados */
@@ -69,4 +105,20 @@ header .container{
 /* estados */
 .menu li:hover .submenu{
     display: block;
+}
+
+/* .classes .classes: pais */
+.destaque .noticia{
+    margin-right: 8px;
+}
+
+/* .classes .classes: nivel 1 */
+.destaque .noticia a{
+    display: flex;
+    font-size: 2em;
+}
+
+/* .classes .classes: nivel 2 */
+.destaque .noticia a h3{
+    margin-left: 8px;
 }
