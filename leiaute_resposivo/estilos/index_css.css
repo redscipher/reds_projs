@@ -122,3 +122,105 @@ aside .noticia{
 .destaque .noticia a h3{
     margin-left: 8px;
 }
+
+/* == responsividades */
+/* p/ smartphones + celulares
+    geralmente vao ate 767px, apartir de 768px seria um tablet*/
+@media screen and (max-width: 767px) {
+    /* elementos: pais */
+    aside{
+        padding-left: 0;
+    }
+
+    /* elementos nivel1 .classes: pais */
+    header div.container{
+        flex-direction: column;
+    }
+
+    /* classes: pais */
+    .conteudo{
+        display: block;
+    }
+
+    .container{
+        max-width: 90%;
+    }
+
+    .noticias{
+        display: block;
+    }
+
+    .submenu{
+        display: block;
+        position: relative;
+        border: none;
+        width: 100%;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .botao-menu{
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    /* classes .classes: pais */
+    .noticias .noticia{
+        margin-bottom: 32px;
+    }
+
+    /* classes .classes: nivel 1 */
+    .destaque .noticia a{
+        display: block;
+        font-size: 1.5em;
+    }
+
+    .destaque .noticia img{
+        margin-right: 0;
+    }
+
+    /* classes > elementos : pais */
+    .menu > li{
+        clear: both;
+    }
+
+    /* .classes elementos: pais */
+    .botao-menu button{
+        padding: 8px;
+    }
+}
+
+/* tablet */
+@media screen and (min-width:768px) and (max-width:1023px){
+    /* classes: pais */
+    .container{
+        width: 90%;
+    }
+
+    .botao-menu{
+        display: none;
+    }
+
+    .noticias{
+        /* funcao 'repeat' retorna uma string, 'param1' = quantidade de vezes em que repetira 'param2', 'param2' = valor
+        ex.: repeat(5, 5%) => 5% 5% 5% 5% 5% */
+        grid-template-columns: repeat(2, 49%);
+    }
+
+    /* classes .classes: nivel 1 */
+    .destaque .noticia a{
+        font-size: 1.5em;
+    }
+}
+
+/* netbooks */
+@media screen and (min-width:1024px){
+    /* classes: pais */
+    .botao-menu{
+        display: none;
+    }
+}
