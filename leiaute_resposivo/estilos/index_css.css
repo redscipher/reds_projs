@@ -1,0 +1,72 @@
+/* resete */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* fonte */
+    font-family: Roboto, sans-serif;
+}
+
+/* elementos: pais */
+header{
+    padding: 16px 0 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* elementos: nivel 1 */
+
+
+/* classes: pais */
+.container{
+    max-width: 1024px;
+    width: 100%;
+    /* p/ centralizar */
+    margin: 0 auto;
+}
+
+.submenu{
+    display: none;
+    border: 1px solid red;
+    position: absolute;
+    left: 0;
+    width: 300px;
+    top: 100%;
+}
+
+/* classe criada p/ dar o espacamento abaixo do elemento que utilizou o atributo 'float' */
+.reseteEsquerda{
+    clear: left;
+}
+
+/* elementos .classes: pais */
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .classes elementos: pais */
+.submenu li{
+    display: block;
+    padding: 8px;
+}
+
+/* estados */
+.menu li:hover{
+    border-color: red;
+}
+
+/* .classes > elementos: pais */
+.menu > li{
+    float: left;
+    list-style: none;
+    padding: 16px;
+    border-top: 4px solid transparent;
+    position: relative;
+}
+
+/* .classes elementos .classe: pais */
+/* estados */
+.menu li:hover .submenu{
+    display: block;
+}
