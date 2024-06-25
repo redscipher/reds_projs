@@ -3,10 +3,85 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* fontes */
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
 }
 
 /* elementos: pais */
+body{
+    display: flex;
+    flex-direction: column;
+     /* tamanho */
+    width: 100vw;
+    height: 100vh;
+    /* imagem de fundo */
+    background-image: url('./imagens/hand-using-laptop-computer-with-virtual-screen-document-online-approve-paperless-quality-assurance-erp-management-concept.jpg');
+    /* tamanho */
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+main{
+    /* ocupa o espaço restante verticalmente */
+    flex: 1;
+    align-content: center;
+}
+
+header
+,footer{
+    background-color: #6e6e6e3c;
+}
+
+form{
+    padding-top: 8px;
+    margin-top: 8px;
+    /* metade da tela */
+    width: 40vw;
+    /* bordas */
+    border-radius: 5px;
+    /* fundo */
+    background-color: #4a4a4a14;
+}
+
+/* mistos - elementos + classes elementos: pais */
+h1
+,.col h2{
+    color: #4c0027;
+}
 
 /* classes: pais */
+.clsPrincipal{
+    max-width: 1024px;
+    width: 100%;
+    /* reseta margens */
+    margin: 0 auto;
+}
+
+.clsEntrada{
+    display: flex;
+    justify-content: space-between;
+    /* margens */
+    padding: 8px 8px;
+    margin: 8px, 8px;
+}
+
+/* classe elementos: pais */
+.clsEntrada label{
+    width: 10%;
+    color: rgb(221, 224, 255);
+}
+
+.clsEntrada input{
+    width: 80%;
+}
+
+.clsEntrada button{
+    width: 100%;
+    color: #1a1a40;
+}
 
 /* id's: pais */
+#idRotNome{
+    color: rgb(244, 245, 252);
+}
