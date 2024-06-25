@@ -10,6 +10,8 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js" integrity="sha256-UnTxHm+zKuDPLfufgEMnKGXDl6fEIjtM+n1Q6lL73ok=" crossorigin="anonymous"></script>
+    <!-- plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.1/dist/jquery.validate.min.js"></script>
     <!-- fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,18 +35,18 @@
                     <form action="">
                         <!-- nome -->
                         <div class="clsEntrada">
-                            <label id="idRotNome" for="idNome" class="form-label" required>Nome: </label>
-                            <input type="text" id="idNome" class="form-control">
+                            <label id="idRotNome" for="idNome" class="form-label">Nome: </label>
+                            <input type="text" id="idNome" class="form-control" name="strNome" placeholder="Seu nome">
                         </div>
                         <!-- email -->
                         <div class="clsEntrada">
-                            <label for="idEmail" class="form-label" required>E-mail: </label>
-                            <input type="email" id="idEmail" class="form-control">
+                            <label for="idEmail" class="form-label">E-mail: </label>
+                            <input type="email" id="idEmail" class="form-control" name="strEmal" placeholder="Seu e-mail">
                         </div>
                         <!-- telefone -->
                         <div class="clsEntrada">
                             <label for="idContato" class="form-label">Telefone: </label>
-                            <input type="tel" id="idContato" class="form-control">
+                            <input type="tel" id="idContato" class="form-control" name="strContato" placeholder="Seu contato">
                         </div>
                         <!-- botao -->
                         <div class="clsEntrada">
