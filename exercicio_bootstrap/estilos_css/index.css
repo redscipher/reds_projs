@@ -18,7 +18,7 @@ body{
     /* imagem de fundo */
     background-image: url('./imagens/hand-using-laptop-computer-with-virtual-screen-document-online-approve-paperless-quality-assurance-erp-management-concept.jpg');
     /* tamanho */
-    background-size: 100vw 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -40,8 +40,8 @@ form{
     width: 40vw;
     /* bordas */
     border-radius: 5px;
-    /* fundo */
-    background-color: #4a4a4a14;
+    /* fundo 4a4a4a14 */
+    background-color: 4a4a4a14;
 }
 
 /* mistos - elementos + classes elementos: pais */
@@ -61,15 +61,25 @@ h1
 .clsEntrada{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     /* margens */
     padding: 8px 8px;
     margin: 8px, 8px;
 }
 
+.error {
+    color: red;
+}
+  
+#idNome-error
+,#idEmail-error{
+    width: 100%;
+    text-align: end;
+}
+
 /* classe elementos: pais */
 .clsEntrada label{
-    width: 10%;
-    color: rgb(221, 224, 255);
+    width: 20%;
 }
 
 .clsEntrada input{
@@ -79,9 +89,54 @@ h1
 .clsEntrada button{
     width: 100%;
     color: #1a1a40;
+    display: block;
 }
 
 /* id's: pais */
-#idRotNome{
-    color: rgb(244, 245, 252);
+#idRotEmail
+,#idRotContato
+,#idRotNome{
+    color: rgba(43, 43, 233, 0.819);
+}
+
+/* == responsividades
+    tablet */
+@media screen and (min-width: 641px) and (max-width: 1023px){
+    form{
+        width: 80vw;
+    }
+
+    /* classes: pais */
+    .clsPrincipal{
+        max-width: 1023px;
+        width: 80%;
+    }
+}
+
+/* smartphones */
+@media screen and (max-width: 640px){
+    form{
+        width: 90vw;
+    }
+
+    body{
+        background-size: auto auto
+    }
+
+    /* classes: pais */
+    .clsPrincipal{
+        max-width: 640px;
+        width: 90%;
+        /* exibicao */
+        text-align: center;
+    }
+
+    .clsEntrada{
+        flex-direction: column;
+    }
+
+    /* classes elementos: pais */
+    .clsEntrada input{
+        width: 100%;
+    }
 }
