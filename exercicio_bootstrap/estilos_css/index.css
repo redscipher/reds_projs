@@ -3,10 +3,140 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* fontes */
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
 }
 
 /* elementos: pais */
+body{
+    display: flex;
+    flex-direction: column;
+     /* tamanho */
+    width: 100vw;
+    height: 100vh;
+    /* imagem de fundo */
+    background-image: url('./imagens/hand-using-laptop-computer-with-virtual-screen-document-online-approve-paperless-quality-assurance-erp-management-concept.jpg');
+    /* tamanho */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main{
+    /* ocupa o espaço restante verticalmente */
+    flex: 1;
+    align-content: center;
+}
+
+header
+,footer{
+    background-color: #6e6e6e3c;
+}
+
+form{
+    padding-top: 8px;
+    margin-top: 8px;
+    /* metade da tela */
+    width: 40vw;
+    /* bordas */
+    border-radius: 5px;
+    /* fundo 4a4a4a14 */
+    background-color: 4a4a4a14;
+}
+
+/* mistos - elementos + classes elementos: pais */
+h1
+,.col h2{
+    color: #4c0027;
+}
 
 /* classes: pais */
+.clsPrincipal{
+    max-width: 1024px;
+    width: 100%;
+    /* reseta margens */
+    margin: 0 auto;
+}
+
+.clsEntrada{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* margens */
+    padding: 8px 8px;
+    margin: 8px, 8px;
+}
+
+.error {
+    color: red;
+}
+  
+#idNome-error
+,#idEmail-error{
+    width: 100%;
+    text-align: end;
+}
+
+/* classe elementos: pais */
+.clsEntrada label{
+    width: 20%;
+}
+
+.clsEntrada input{
+    width: 80%;
+}
+
+.clsEntrada button{
+    width: 100%;
+    color: #1a1a40;
+    display: block;
+}
 
 /* id's: pais */
+#idRotEmail
+,#idRotContato
+,#idRotNome{
+    color: rgba(43, 43, 233, 0.819);
+}
+
+/* == responsividades
+    tablet */
+@media screen and (min-width: 641px) and (max-width: 1023px){
+    form{
+        width: 80vw;
+    }
+
+    /* classes: pais */
+    .clsPrincipal{
+        max-width: 1023px;
+        width: 80%;
+    }
+}
+
+/* smartphones */
+@media screen and (max-width: 640px){
+    form{
+        width: 90vw;
+    }
+
+    body{
+        background-size: auto auto
+    }
+
+    /* classes: pais */
+    .clsPrincipal{
+        max-width: 640px;
+        width: 90%;
+        /* exibicao */
+        text-align: center;
+    }
+
+    .clsEntrada{
+        flex-direction: column;
+    }
+
+    /* classes elementos: pais */
+    .clsEntrada input{
+        width: 100%;
+    }
+}
