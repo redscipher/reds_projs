@@ -1,0 +1,77 @@
+/* resete */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* elementos: pais */
+html{
+    /* corta oque exceder os limites */
+    overflow: hidden;
+}
+
+/* ids: pais */
+#idImagensFundo{
+    /* manda imagem p/ plano de fundo: p/ atras */
+    z-index: 0;
+}
+
+/* classes: pais */
+.clsPrincipal{
+    max-width: 1024px;
+    width: 100%;
+}
+
+.card-img-overlay{
+    /* margens */
+    border: 2px solid rgba(97, 97, 97, 0.356);
+    /* tamanho do cartao principal */
+    width: 100vw;
+    height: 90vh;
+     /* adiciona rolagem se necessario */
+     overflow: auto;
+}
+
+/* classes > elementos : pais */
+.container > header{
+    color: #ede6db;
+    margin-bottom: 24px;
+}
+
+/* elementos.classes: pais */
+h2.card-title{
+    color: #e9d5da;
+    /* fontes */
+    font-family: "Margarine", sans-serif;;
+}
+
+p.card-text{
+    color: #ccc;
+    /* fontes */
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+}
+
+/* fontes */
+.dekko-regular {
+    font-family: "Dekko", cursive;
+    font-weight: bold;
+    font-style: bold;
+}
+
+.margarine-regular {
+    font-family: "Margarine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .rowdies-regular {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
+  

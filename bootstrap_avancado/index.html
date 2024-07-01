@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo</title>
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap&family=Margarine&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- == estilos
+    bootstrap -->
+    <link rel="stylesheet" href="/bibliotecas/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./estilos/index.css">
+</head>
+<body>
+    <!-- linha principal -->
+    <div class="row">
+        <!-- coluna principal -->
+        <div class="col-12">
+            <!-- cartao principal -->
+            <div class="card" id="idCartaoPrincipal">
+                <!-- imagem do cartao -->
+                <div class="card-img" id="idImagensFundo">
+                    <!-- cria um carrossel -->
+                    <div class="carousel slide carousel-fade mb-5" id="idCarrossel" data-bs-ride="carousel">
+                        <!-- caixa que guardara os arquivos -->
+                        <div class="carousel-inner">
+                            <!-- itens -->
+                            <div data-bs-interval="5000" class="carousel-item active">
+                                <img class="d-block vw-100 vh-100" src="./imagens/milky-way-5905903_640.jpg" alt="Imagem interna de uma galaxia" class="d-block w-100">
+                                <div class="carousel-caption">
+                                    Imagem de <a href="https://pixabay.com/pt/users/sinousxl-7554155/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5905903">Thomas</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5905903">Pixabay</a>
+                                </div>
+                            </div>
+                            <div data-bs-interval="5000" class="carousel-item">
+                                <img class="d-block vw-100 vh-100" src="./imagens/space-7011298_640.jpg" alt="Imagem de um buraco negro" class="d-block w-100">
+                                <div class="carousel-caption">
+                                    Imagem de <a href="https://pixabay.com/pt/users/evangeliena-3637014/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7011298">Евангелина Вебер</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7011298">Pixabay</a>
+                                </div>
+                            </div>
+                            <div data-bs-interval="5000" class="carousel-item">
+                                <img class="d-block vw-100 vh-100" src="./imagens/planets-5923806_640.jpg" alt="Representacao de um planeta" class="d-block w-100">
+                                <div class="carousel-caption">
+                                    Imagem de <a href="https://pixabay.com/pt/users/charlvera-11040068/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5923806">Chil Vera</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5923806">Pixabay</a>
+                                </div>
+                            </div>
+                            <!-- botoes p/ deslizar pelo slide
+                            voltar -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#idCarrossel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Voltar</span>
+                            </button>
+                            <!-- proximo -->
+                            <button class="carousel-control-next" type="button" data-bs-target="#idCarrossel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>    
+                                <span class="visually-hidden">Próximo</span>
+                            </button>
+                            <!-- exibicao tamanho slide -->
+                            <div class="carousel-indicators">
+                                <button class="active" type="button" data-bs-target="#idCarrossel" data-bs-slide-to="0"></button>
+                                <button type="button" data-bs-target="#idCarrossel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#idCarrossel" data-bs-slide-to="2"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- conteudo sobrepondo imagem -->
+                <div class="card-img-overlay">
+                    <div class="container">
+                        <!-- caebacalho -->
+                        <header class="card-header">
+                            <div class="card-title display-5 dekko-regular  text-center">Curiosidades sobre o Universo Observável</div>
+                        </header>
+                        <!-- corpo -->
+                        <main>
+                            <div class="card-body">
+                                <!-- grid de noticias -->
+                                <div class="container">
+                                    <!-- linha 1 -->
+                                    <div class="row pb-5">
+                                        <!-- secao : postagens -->
+                                        <section id="idScPostagens">
+                                            <div class="card-subtitle display-6 dekko-regular text-white">Postagens</div>
+                                        </section>
+                                         <!-- em telas grande tera 3 colunas, em telas medias tera 2, e em telas pequenas tera 1 -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 g-0">
+                                            <!-- cria um card -->
+                                            <article class="card h-100 text-center bg-transparent p-3 m-1">
+                                                <!-- cabecalho -->
+                                                <header class="card-header">
+                                                    <h2 class="card-title h5">Astrônomos descobrem a galáxia morta mais antiga do Universo</h2>
+                                                </header>
+                                                <!-- imagem -->
+                                                <img class="card-img" src="./imagens/galaxia-estrelas-mortas.webp" alt="Imagem de um pesquisa realizada sobre o universo">
+                                                <!-- corpo do card -->
+                                                <div class="card-body text-white">
+                                                    <p class="card-text h6">
+                                                        A galáxia existia quando o universo tinha apenas cerca de 700 milhões de anos e sua idade atual é de cerca de 13,8 bilhões de anos, mas algo fez com que ela interrompesse repentinamente a formação de estrelas muito cedo. Isso aconteceu quase tão rápido quanto o início do nascimento das estrelas no Universo, há mais de 13 bilhões de anos. Os pesquisadores ainda não conseguiram definir a causa desse fenômeno.
+                                                    </p>
+                                                </div>
+                                                <footer>
+                                                    <!-- link p/ creditos -->
+                                                    <div class="d-grid gap-2">
+                                                        <a href="https://www.cnnbrasil.com.br/tecnologia/astronomos-descobrem-a-galaxia-morta-mais-antiga-do-universo/" class="btn btn-outline-secondary">Leia mais</a>
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <!-- em telas grande tera 3 colunas, em telas medias tera 2, e em telas pequenas tera 1 -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 g-0">
+                                            <!-- cria um card -->
+                                            <article class="card h-100 text-center text-white bg-transparent p-3 mb-5 p-3 m-1">
+                                                <!-- cabecalho -->
+                                                <header class="card-header">
+                                                    <h2 class="card-title h5">Pesquisador brasileiro pode ter encontrado novo planeta no Sistema Solar</h2>
+                                                </header>
+                                                <!-- imagem -->
+                                                <img class="card-img" src="./imagens/Planeta-orbita-vista_superior-1024x640-1.webp" alt="Imagem da orbita de varios planetas do sistema solar">
+                                                <!-- corpo do card -->
+                                                <div class="card-body">
+                                                    <p class="card-text h6">
+                                                        Um estudo publicado no final do ano passado, cujos principais autores são um pesquisador brasileiro e outro japonês, aponta a possibilidade de que haja um novo planeta em nosso Sistema Solar. 
+                                                    </p>
+                                                </div>
+                                                <footer>
+                                                    <!-- link p/ creditos -->
+                                                    <div class="d-grid gap-2">
+                                                        <a href="https://www.cnnbrasil.com.br/tecnologia/pesquisador-brasileiro-pode-ter-encontrado-novo-planeta-no-sistema-solar/" class="btn btn-outline-secondary">Leia mais</a>
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <!-- em telas grande tera 3 colunas, em telas medias tera 2, e em telas pequenas tera 1 -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 g-0">
+                                            <!-- cria um card -->
+                                            <article class="card h-100 text-center text-white bg-transparent p-3 mb-5 p-3 m-1">
+                                                <!-- cabecalho -->
+                                                <header class="card-header">
+                                                    <h2 class="card-title h5">Nasa descobre outra “Super-Terra” em zona habitável no Universo</h2>
+                                                </header>
+                                                <!-- imagem -->
+                                                <img class="card-img" src="./imagens/nova-super-terra-TOI-715b.webp" alt="Representacao de um planeta">
+                                                <!-- corpo do card -->
+                                                <div class="card-body">
+                                                    <p class="card-text h6">
+                                                        O Satélite de Pesquisa de Exoplanetas em Trânsito (TESS) da Agência Aeroespacial dos Estados Unidos (Nasa) fez a descoberta de mais uma “Super-Terra“, desta vez, localizada a 137 anos-luz de distância do nosso planeta. Batizado como TOI-715b, o planeta pode ainda estar acompanhado de TOI-715c, outro planeta que, se confirmado, será o menor já descoberto pelo satélite americano.
+                                                    </p>
+                                                </div>
+                                                <footer>
+                                                    <!-- link p/ creditos -->
+                                                    <div class="d-grid gap-2">
+                                                        <a href="https://www.cnnbrasil.com.br/tecnologia/nasa-descobre-outra-super-terra-em-zona-habitavel-no-universo/" class="btn btn-outline-secondary">Leia mais</a>
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <!-- rodape -->
+                        <footer class="card-footer">
+                            
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- == scripts 
+    bootstrap -->
+    <script type="text/javascript" src="/bibliotecas/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- js -->
+    <script type="text/javascript" src="./fontes/index.js"></script>
+</body>
+</html>
