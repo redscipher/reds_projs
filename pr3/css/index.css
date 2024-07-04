@@ -1,0 +1,76 @@
+/* resete automatico com bootstrap */
+
+/* elementos : 1 */
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+/* classes: 1 */
+.navbar{
+    background-color: #e15f41;
+}
+
+.sessao-titulo{
+    font-family: "Pacifico", cursive;
+}
+
+.navbar-toggler{
+    background-color: #ffeae6;
+}
+
+.texto-colorido{
+    color: #e15f41;
+}
+
+/* mistos: classes + ids elementos: 1 */
+.nav-cardapio .nav-link.active
+,#fale-conosco button{
+    background-color: #e15f41;
+    color: #fff;
+}
+
+/* classes elementos : 1 */
+.links-sociais li{
+    list-style: none;
+    display: inline;
+}
+
+.links-sociais a{
+    text-decoration: none;
+}
+
+/* mistos -> ids classes : 1 */
+#id-cabecalho .nav .nav-link.active{
+    background-color: #fff;
+    color: #e15f41;
+}
+
+/* estados */
+.nav-cardapio .nav-link:hover{
+    color: #e15f41;
+}
+
+#id-cabecalho .nav .nav-link
+,.navbar-brand
+/* estados */
+,.navbar-brand:hover
+,.nav-cardapio .nav-link.active:hover{
+    color: #fff;
+}
+
+/* ids : 1 */
+#sobre-o-restaurante
+,#cardapio{
+    background-color: #ffeae6;
+}
+
+/* == responsividades
+smartphones */
+@media screen and (max-width: 767px){
+    /* classes elementos : 1 */
+    .carousel-item img {
+        height: 280px;
+    }
+}
