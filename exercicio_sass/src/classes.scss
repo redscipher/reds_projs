@@ -1,5 +1,6 @@
 // importacoes
 @use './config/variaveis';
+@use 'sass:math';
 
 // classes
 .container {
@@ -27,7 +28,7 @@
 
         // elementos
         a{
-            color: #fff;
+            color: variaveis.$corTexto;
             text-decoration: none;
         }
     }
@@ -43,8 +44,8 @@
 
 .product-button {
     display: block;
-    background-color: #44bd32;
-    color: #fff;
+    background-color: variaveis.$corFundo;
+    color: variaveis.$corTexto;
     text-align: center;
     padding: variaveis.$espacamentoPadrao 0;
     border-radius: variaveis.$espacamentoPadrao;
@@ -53,6 +54,6 @@
 
     // estados
     &:hover{
-        background-color: #4cd137;
+        background-color: lighten(variaveis.$corFundo, 10%);
     }
 }
