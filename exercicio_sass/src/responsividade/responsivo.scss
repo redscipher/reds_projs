@@ -1,0 +1,26 @@
+// importacoes
+@use '../config/variaveis';
+
+// responsividades
+// tablet
+@media screen and (max-width: variaveis.$tamTablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+// smartphone
+@media screen and (max-width: variaveis.$tamSmartphone) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}

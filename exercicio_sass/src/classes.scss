@@ -1,0 +1,58 @@
+// importacoes
+@use './config/variaveis';
+
+// classes
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+
+    // elementos
+    li{
+        font-weight: bold;
+        margin-left: 24px;
+
+        // elementos
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.product-item {
+    // elementos
+    img{
+        width: 100%;
+        border-radius: 16px;
+    }
+}
+
+.product-button {
+    display: block;
+    background-color: #44bd32;
+    color: #fff;
+    text-align: center;
+    padding: variaveis.$espacamentoPadrao 0;
+    border-radius: variaveis.$espacamentoPadrao;
+    margin-top: variaveis.$espacamentoPadrao;
+    text-decoration: none;
+
+    // estados
+    &:hover{
+        background-color: #4cd137;
+    }
+}
