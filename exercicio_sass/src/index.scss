@@ -1,0 +1,32 @@
+// importacoes
+@use './config/resete';
+@use './classes';
+@use './responsividade/responsivo';
+
+// elementos
+body {
+    background-color: #f5f6fa;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    padding: 56px 0;
+}
+
+header {
+    background-color: #182C61;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+    // classes
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
