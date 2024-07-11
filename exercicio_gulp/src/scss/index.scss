@@ -1,0 +1,7 @@
+// importacoes
+@use './configs/variaveis';
+
+// elementos
+body{
+    background-color: variaveis.$corFundo;
+}
