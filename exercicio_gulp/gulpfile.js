@@ -1,19 +1,23 @@
-// importacoes: gulp, sass, sourcemaps, uglify, imagemin
+// requerimentos: gulp, sass, sourcemaps, uglify, imagemin
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const optipng = require('imagemin-optipng');
 
 // funcoes
 function execComprimeImagens(){
     try {
         // executa comprime imagens
-        let obj = gulp.src(['./imagens/*'])
-                    .pipe(imagemin())
+        return gulp.src(['./imagens/*.jpg', './imagens/*.png'])
+                    .pipe(imagemin([
+                        mozjpeg({quality: 75, progressive: true})
+                        ,optipng({optimizationLevel: 5})
+                    ]))
                     .pipe(gulp.dest('./build/imagens'))
         // def retorno
-        return obj;
     } catch (error) {
         console.log(error.message);
     }
@@ -52,7 +56,7 @@ function execComprimeJS(){
 function execVigilancia(){
     try {
         // vigia todos arquivos por mudanca paralelamente
-        gulp.watch(['./imagens/*', './src/scss/*.scss', './src/scss/configs/*.scss', './src/js/*.js'],
+        gulp.watch(['./imagens/*.jpg', './imagens/*.png', './src/scss/*.scss', './src/scss/configs/*.scss', './src/js/*.js'],
             {ignoreInitial: false}, gulp.parallel(execComprimeImagens, execCompilacaoSASS, execComprimeJS))
     } catch (error) {
         console.log(error.message);
