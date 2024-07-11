@@ -26,6 +26,34 @@ let inicializaJQuery = function(){
     }
  }
 
+ let validaEntrada = function(){
+     try {
+          // valida jquery
+          if (flgJQuery) {
+
+          }
+     } catch (error) {
+          console.log(error.message);
+     }
+ }
+
+ let adicionaImagem = function(){
+     try {
+          // valida jquery e bootstrap
+          if (flgBootstrap && flgJQuery) {
+               // valida entrada correta
+               if (validaEntrada()) {
+
+               }else{
+                    // lanca excecao
+
+               }
+          }
+     } catch (error) {
+          console.log(error.message);
+     }
+ }
+
 
 // confirma/espera todo conteudo do dom ser carregado
 document.addEventListener('DOMContentLoaded', inicializaBootstrap);

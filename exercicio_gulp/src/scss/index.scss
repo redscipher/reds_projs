@@ -1,7 +1,26 @@
 // importacoes
 @use './configs/variaveis';
+// funcoes matematicates SASS
+@use 'sass:math';
+
+// funcoes
+@function convertePixelParaEm($alvoEmPixel, $contextoEmPixel: 16px) {
+    // variavel
+    $tam: math.div($alvoEmPixel, $contextoEmPixel)+em;
+    // retorno funcao
+    @return $tam;
+}
 
 // elementos
 body{
     background-color: variaveis.$corFundo;
+    // fonte
+    font-family: variaveis.$fontePadrao;
+}
+
+header{
+    background-color: rgba(255, 166, 0, 0.663);
+    color: variaveis.$corTexto;
+    // tamanho da fonte do cabecalho
+    font-size: convertePixelParaEm(48px);
 }
