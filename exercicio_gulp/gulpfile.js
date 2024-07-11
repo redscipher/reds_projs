@@ -13,8 +13,8 @@ function execComprimeImagens(){
         // executa comprime imagens
         return gulp.src(['./imagens/*.jpg', './imagens/*.png'])
                     .pipe(imagemin([
-                        mozjpeg({quality: 75, progressive: true})
-                        ,optipng({optimizationLevel: 5})
+                        mozjpeg()
+                        ,optipng()
                     ]))
                     .pipe(gulp.dest('./build/imagens'))
         // def retorno

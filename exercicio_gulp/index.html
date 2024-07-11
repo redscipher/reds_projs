@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-12">
                     <!-- carrossel -->
-                    <div class="carousel slide" data-bs-ride="carousel" id="id-carrossel">
+                    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="id-carrossel">
                         <div class="carousel-inner">
                             <ul>
                                 <li class="carousel-item active" data-bs-interval="3000">
@@ -77,11 +77,18 @@
                       </div>
                 </div>
             </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <!-- formulario -->
-                    <form action="">
-
+                    <form action="" class="d-inline-flex">
+                        <!-- campo p/ entrar com um link -->
+                        <div class="d-inline-flex w-100 text-center">
+                            <label class="form-label pe-3 text-center" for="id-nome">Link: </label>
+                            <input class="form-control" type="text" id="id-link" placeholder="Link">
+                        </div>
+                        <!-- botao -->
+                        <button type="submit" class="btn btn-secondary ms-3">Adicinar</button>
                     </form>
                 </div>
             </div>

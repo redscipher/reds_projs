@@ -30,17 +30,18 @@ let inicializaJQuery = function(){
      try {
           // valida jquery
           if (flgJQuery) {
-
+               
           }
      } catch (error) {
           console.log(error.message);
      }
  }
 
- let adicionaImagem = function(){
+ let adicionaImagem = function(e){
      try {
           // valida jquery e bootstrap
           if (flgBootstrap && flgJQuery) {
+               alert('voce apertou o botao');
                // valida entrada correta
                if (validaEntrada()) {
 
@@ -58,3 +59,6 @@ let inicializaJQuery = function(){
 // confirma/espera todo conteudo do dom ser carregado
 document.addEventListener('DOMContentLoaded', inicializaBootstrap);
 $(document).ready(inicializaJQuery);
+
+// eventos
+$('form').on('click', adicionaImagem);
