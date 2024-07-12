@@ -30,7 +30,7 @@
     <!-- principal -->
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row w-100">
                 <div class="col-12">
                     <!-- carrossel -->
                     <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="id-carrossel">
@@ -78,17 +78,17 @@
                 </div>
             </div>
             </div>
-            <div class="row">
+            <div class="row w-100">
                 <div class="col-12">
                     <!-- formulario -->
                     <form action="" class="d-inline-flex">
                         <!-- campo p/ entrar com um link -->
-                        <div class="d-inline-flex w-100 text-center">
-                            <label class="form-label pe-3 text-center" for="id-nome">Link: </label>
+                        <div class="d-inline-flex w-100">
+                            <label class="form-label pe-3" for="id-link">Link: </label>
                             <input class="form-control" type="text" id="id-link" placeholder="Link" name="nmLink">
                         </div>
                         <!-- botao -->
-                        <button type="submit" class="btn btn-secondary ms-3">Adicinar</button>
+                        <button id="btn-adicionar" type="submit" class="btn btn-secondary ms-3">Adicinar</button>
                     </form>
                 </div>
             </div>
@@ -99,6 +99,9 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js" integrity="sha256-UnTxHm+zKuDPLfufgEMnKGXDl6fEIjtM+n1Q6lL73ok=" crossorigin="anonymous"></script>
+    <!-- plugins -->
+    <script type="text/javascript" src="./src/js/plugins/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./src/js/plugins/messages_pt_BR.js"></script>
     <!-- ----------- -->
     <script type="text/javascript" src="./build/js/index.js"></script>
 </body>
