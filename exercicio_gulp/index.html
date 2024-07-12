@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- icones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- estilos -->
+    <link rel="stylesheet" href="./build/css/index.css">
+</head>
+<body>
+    <!-- cabecalho -->
+    <header>
+        <div class="container">
+            <div class="row p-3 m-0 text-center">
+                <div class="col-12">
+                    <!-- titulo -->
+                    <i class="bi bi-clipboard2-check-fill">Cadastro de imagens</i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- principal -->
+    <main>
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-12">
+                    <!-- carrossel -->
+                    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="id-carrossel">
+                        <div class="carousel-inner">
+                            <ul>
+                                <li class="carousel-item active" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/bird-ga5d9ed257_1920.jpg" alt="Imagem de uma coruja">
+                                </li>
+                                <li class="carousel-item" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/birds-g6b63afc7a_1920.jpg" alt="Imagem de ganços">
+                                </li>
+                                <li class="carousel-item" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/butterfly-g7f3546b64_1920.jpg" alt="Imagem de uma borboleta">
+                                </li>
+                                <li class="carousel-item" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/hands-gc143a78ba_1920.png" alt="">
+                                </li>
+                                <li class="carousel-item" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/lilies-g19bcb21a4_1920.jpg" alt="">
+                                </li>
+                                <li class="carousel-item" data-bs-interval="3000">
+                                    <img class="d-block w-100" src="./build/imagens/street-gddeece843_1920.jpg" alt="">
+                                </li>
+                            </ul>
+                            <!-- botoes slide -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#id-carrossel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#id-carrossel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Proxima</span>
+                            </button>
+                            <!-- indicadores -->
+                            <div class="carousel-indicators">
+                                <button class="active" type="button" data-bs-target="#id-carrossel" data-bs-slide-to="0"></button>
+                                <button type="button" data-bs-target="#id-carrossel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#id-carrossel" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#id-carrossel" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#id-carrossel" data-bs-slide-to="4"></button>
+                                <button type="button" data-bs-target="#id-carrossel" data-bs-slide-to="5"></button>
+                            </div>
+                        </duv>
+                      </div>
+                </div>
+            </div>
+            </div>
+            <div class="row w-100">
+                <div class="col-12">
+                    <!-- formulario -->
+                    <form action="" class="d-inline-flex">
+                        <!-- campo p/ entrar com um link -->
+                        <div class="d-inline-flex w-100">
+                            <label class="form-label pe-3" for="id-link">Link: </label>
+                            <input class="form-control" type="text" id="id-link" placeholder="Link" name="nmLink">
+                        </div>
+                        <!-- botao -->
+                        <button id="btn-adicionar" type="submit" class="btn btn-secondary ms-3">Adicinar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- scripts: bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js" integrity="sha256-UnTxHm+zKuDPLfufgEMnKGXDl6fEIjtM+n1Q6lL73ok=" crossorigin="anonymous"></script>
+    <!-- plugins -->
+    <script type="text/javascript" src="./src/js/plugins/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./src/js/plugins/messages_pt_BR.js"></script>
+    <!-- ----------- -->
+    <script type="text/javascript" src="./build/js/index.js"></script>
+</body>
+</html>
