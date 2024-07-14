@@ -1,0 +1,32 @@
+// importacoes
+@import './configs/resete.less';
+@import './classes.less';
+@import './configs/responsividades.less';
+@import './configs/variaveis-escapes.less';
+
+// elementos
+body {
+    background-color: @corPrimaria;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    padding: 56px 0;
+}
+
+header {
+    background-color: @corSecundaria;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
