@@ -24,7 +24,7 @@ module.exports = function(grunt){
             // desenvolvimento
             desenvolvimento: {
                 files: {
-                    // './build/dev/css/sass/index.css': './src/sass/index.scss'
+                    // './build/dev/css/sass/ .css': './src/sass/ .scss'
                 }
             },
             // producao
@@ -34,19 +34,20 @@ module.exports = function(grunt){
                     style: 'compressed'
                 },
                 files: {
-                    // './build/prod/css/sass/index.min.css': './src/sass/index.scss'
+                    // './build/prod/css/sass/ .css': './src/sass/ .scss'
                 }
             }
         },
-        // plugin observador
+        // paralelos
         concurrent: {
             desenvolvimento: {
                 target: ['less:desenvolvimento', 'sass:desenvolvimento', 'replace:desenvolvimento']
             },
             producao: {
-                target: ['less:producao', 'sass:dist', 'htmlmin:dist', 'replace:dist', 'clean']
+                target: ['less:producao', 'sass:dist', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']
             }
         },
+        // observador
         watch: {
             desenvolvimento: {
                 // ** => todas as pastas
@@ -67,6 +68,10 @@ module.exports = function(grunt){
                     patterns: [{
                         match: 'ARQUIVO-CSS',
                         replacement: './css/index.css'
+                    },
+                    {
+                        match: 'ARQUIVO-JS',
+                        replacement: '../../src/js/index.js'
                     }]
                 },
                 files: [{
@@ -81,6 +86,10 @@ module.exports = function(grunt){
                     patterns: [{
                         match: 'ARQUIVO-CSS',
                         replacement: './css/index.min.css'
+                    },
+                    {
+                        match: 'ARQUIVO-JS',
+                        replacement: './js/index.min.js'
                     }]
                 },
                 files: [{
@@ -102,7 +111,14 @@ module.exports = function(grunt){
                 }
             }
         },
-        clean: ['prebuild']
+        clean: ['prebuild'],
+        uglify: {
+            target: {
+                files: {
+                    './build/prod/js/index.min.js': './src/js/index.js'
+                }
+            }
+        }
     });
 
     // importa plugins
@@ -117,7 +133,9 @@ module.exports = function(grunt){
     // minificacao html
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     // exclui arquivos temps
-    grunt.loadNpmTasks('grunt-contrib-clean')
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    // minificacao js
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // tarefa padrao
     grunt.registerTask('default', ['concurrent:desenvolvimento']);

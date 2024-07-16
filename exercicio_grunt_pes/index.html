@@ -16,15 +16,20 @@
     <main>
         <h1>Sorteador</h1>
         <!-- formulario -->
-        <form action="">
+        <form action="" id="form-sorteador">
             <!-- entradas -->
             <div>
                 <label for="id-numero">Número maximo: </label>
-                <input type="number" id="id-numero">
+                <input type="number" id="id-numero" required min="2" value="2" step="1">
             </div>
             <!-- botoes -->
             <button type="submit">Sortear numero</button>
         </form>
+        <div class="resultado">
+            O numero sorteado foi: <span id="id-valor"></span>
+        </div>
     </main>
+    <!-- javascripts -->
+    <script type="text/javascript" src="@@ARQUIVO-JS"></script>
 </body>
 </html>
