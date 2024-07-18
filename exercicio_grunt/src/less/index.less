@@ -1,3 +1,43 @@
+// importacoes
+@import './configs/variaveis.less';
+@import './classes.less';
+
 body{
-    background-color: #ccc;
+    background-color: @corFundo;
+}
+
+main{
+    // classes
+    .container{
+        display: flex;
+        flex-direction: column;
+        // alinha os objetos horizontalmente
+        justify-content: center;
+        // alinha ao centro verticalmente
+        align-items: center;
+        // tamanho do container
+        height: 90vh;
+        text-align: center;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    background-color: darken(@corFundo, 5%);
+    border-radius: 30px;
+    // classes
+    .container{
+        // margens
+        padding: 16px;
+        // cores
+        background-color: darken(@corFundo, 7%);
+        border-radius: 30px;
+        text-align: center;
+        color: @corTexto;
+    }
 }

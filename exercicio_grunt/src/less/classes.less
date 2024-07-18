@@ -1,0 +1,42 @@
+// importacoes
+@import './configs/variaveis.less';
+
+// mixins
+.visualizacao-padrao(@dTipoVisu, @jcTipoDist, @tamanho){
+    display: @dTipoVisu;
+    justify-content: @jcTipoDist;
+    width: @tamanho;
+}
+
+// classes
+.cls-entradas{
+    // configuracao
+    .visualizacao-padrao(inline-flex, center, 100%);
+
+    // elementos
+    label{
+        width: 30%;
+        color: @corTexto;
+    }
+    
+    input{
+        width: 70%;
+        color: #000;
+    }
+}
+
+.cls-botoes{
+    // configuracao
+    .visualizacao-padrao(inline-flex, space-between, 100%);
+
+    // elementos
+    button{
+        width: 40%;
+        background-color: @corBotao;
+
+        // estados
+        &:hover{
+            background-color: lighten(@corBotao, 10%);
+        }
+    }
+}

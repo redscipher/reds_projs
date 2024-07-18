@@ -15,3 +15,9 @@ let inicializaBootstrap = function(){
 
 // carregando toda pagina
 document.addEventListener('DOMContentLoaded', inicializaBootstrap);
+
+// eventos
+document.querySelector('form').addEventListener('submit', function(e){
+    alert('Ação efetuada!');
+    this.reset();
+});
