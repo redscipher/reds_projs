@@ -1,0 +1,17 @@
+{
+  "name": "emails",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "less-watch-compiler ./src/less/ ./build/css index.less --run-once --source-map",
+    "less-obs": "less-watch-compiler ./src/less/ ./build/css index.less --source-map"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "less": "^4.2.0",
+    "less-watch-compiler": "^1.16.3"
+  }
+}
