@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        /* == responsividades
+            p/ smartphones + celulares
+            geralmente vao ate 767px, apartir de 768px seria um tablet*/
+        @media screen and (max-width: 767px) {
+            /* elementos: pais */
+            table{
+                width: 100%;
+            }
+        }
+
+        /* tablet */
+        @media screen and (min-width:768px) and (max-width:1023px){
+            /* classes: pais */
+            table{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- corpo principal -->
+    <main>
+       <center>
+            <!-- tabela do blog -->
+            <table style="width: 50%;" cellpadding="2" cellspacing="0">
+            <thead style="background-color: #ffa836;">
+                <tr style="border-radius: 5px;">
+                    <th align="left" style="padding: 8px;">
+                        <!-- nome -->
+                        <img src="https://rep-arquivos.vercel.app/imagens/nome_blog.png" alt="Nome do blog">
+                    </th>
+                    <th align="right" style="padding: 8px;">
+                        <div>
+                            <img style="width: 150px;
+                                display: block;" src="https://rep-arquivos.vercel.app/imagens/blogging-4812375_640.jpg" alt="">
+                            <span style="font-size: 8px;
+                                display: block;
+                                padding-top: 8px;
+                                color: #ccc;">
+                                Imagem de <a href="https://pixabay.com/pt/users/mangomatter-14931421/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4812375">Mango Matter</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4812375">Pixabay</a>
+                            </span>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="background-color: #ffa836f3;">
+                <tr>
+                    <td colspan="2" style="color: #ccc;
+                        font-size: 8px;">
+                        <img style="width: 100%;
+                                padding-bottom: 8x;" src="https://rep-arquivos.vercel.app/imagens/diary-968592_640.jpg" alt="">
+                        Imagem de <a href="https://pixabay.com/pt/users/edar-609103/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=968592">Edar</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=968592">Pixabay</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-top: 16px;">
+                        <img src="https://rep-arquivos.vercel.app/imagens/principais_postagens.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 16px;">
+                        <a href="#">
+                            <img height="100%" src="https://rep-arquivos.vercel.app/imagens/baleia.webp" alt="Baleia azul">
+                        </a>
+                    </td>
+                    <td style="color: #fff;
+                        padding-right: 32px;
+                        vertical-align: text-top;">
+                        <h1><b>Titulo</b></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quo necessitatibus tenetur, officia cumque illum voluptate ea laborum nesciunt eligendi dolore aliquam aspernatur neque aut, iusto alias nemo assumenda. Assumenda!
+                        </p>
+                        <a href="#" style="color: #ffda33;"><i>Leia mais</i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 16px;">
+                        <a href="#">
+                            <img height="100%" src="https://rep-arquivos.vercel.app/imagens/baleia.webp" alt="Baleia azul">
+                        </a>
+                    </td>
+                    <td style="color: #fff;
+                        padding-right: 32px;
+                        vertical-align: text-top;">
+                        <h1><b>Titulo</b></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quo necessitatibus tenetur, officia cumque illum voluptate ea laborum nesciunt eligendi dolore aliquam aspernatur neque aut, iusto alias nemo assumenda. Assumenda!
+                        </p>
+                        <a href="#" style="color: #ffda33;"><i>Leia mais</i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 16px;">
+                        <a href="#">
+                            <img height="100%" src="https://rep-arquivos.vercel.app/imagens/baleia.webp" alt="Baleia azul">
+                        </a>
+                    </td>
+                    <td style="color: #fff;
+                        padding-right: 32px;
+                        vertical-align: text-top;">
+                        <h1><b>Titulo</b></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quo necessitatibus tenetur, officia cumque illum voluptate ea laborum nesciunt eligendi dolore aliquam aspernatur neque aut, iusto alias nemo assumenda. Assumenda!
+                        </p>
+                        <a href="#" style="color: #ffda33;"><i>Leia mais</i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot style="background-color: #ffa836c7;">
+                <tr>
+                    <td style="padding: 16px;" colspan="2">
+                        <center>
+                            <a style="text-decoration: none;" href="https://instagram.com">
+                                <img src="https://rep-arquivos.vercel.app/icones/instagram.png" alt="Instagram">
+                            </a>
+                            <a style="text-decoration: none;" href="https://facebook.com">
+                                <img src="https://rep-arquivos.vercel.app/icones/facebook.png" alt="Facebook">
+                            </a>
+                            <a style="text-decoration: none;" href="https://twitter.com">
+                                <img src="https://rep-arquivos.vercel.app/icones/twitter.png" alt="Twitter">
+                            </a>
+                        </center>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+       </center>
+    </main>
+</body>
+</html>
