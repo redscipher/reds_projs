@@ -13,27 +13,31 @@
     <header>
         <div class="container">
             <!-- imagem -->
-            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt=".">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt="." id="id-img-avatar">
             <!-- usuario -->
-            <h1 class="profile-name">Fulano</h1>
-            <h2 class="profile-username">@fulano</h2>
+            <h1 class="profile-name" id="id-nome"></h1>
+            <h2 class="profile-username" id="id-usuario"></h2>
             <!-- numeros -->
             <ul class="numbers">
                 <li class="numbers-item">
                     <h4>Repositórios</h4>
-                    5
+                    <span id="id-num-reps"></span>
                 </li>
                 <li class="numbers-item">
                     <h4>Seguidores</h4>
-                    5
+                    <span id="id-num-seguidores"></span>
                 </li>
                 <li class="numbers-item">
                     <h4>Seguindo</h4>
-                    5
+                    <span id="id-num-seguindo"></span>
                 </li>
             </ul>
-            <a href="#" class="profile-link">Ver no Github</a>
+            <a href="#" class="profile-link" id="id-link">Ver no Github</a>
         </div>
     </header>
+    <!-- jquery -->
+    <script type="text/javascript" src="https://rep-arquivos.vercel.app/bibliotecas/jquery/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script type="text/javascript" src="./src/js/main.js"></script>
 </body>
 </html>
