@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando números</title>
+    <!--arquivo de estilizacao-->
+    <link rel="stylesheet" href="./estilos/main.css">
+</head>
+<body>
+    <!--estilos usados:
+        cls_div_principal -> div-->
+    <header>
+        <!--cabecalho principal-->
+        <h1>Validação de números com JavaScript</h1>
+    </header>
+    <main>
+        <div class="cls_div_principal">
+            <!--formulario-->
+            <form action="">
+                <div class="cls_entradas">
+                    <!--primeiro numero-->
+                    <label for="idVlrA">Campo A:</label>
+                    <input type="number" id="idVlrA" name="vlrA" placeholder="Digite um numero">
+                </div>
+                <div class="cls_entradas">
+                    <!--segundo numero-->
+                    <label for="idVlrB">Campo B:</label>
+                    <input type="number" id="idVlrB" name="vlrB" placeholder="Digite um numero">
+                </div>
+                <!--exibicao validacao-->
+                <div class="cls_form_valida"><p id="idMsgVal">Mensagem de validação</p></div>
+                <!--botao p/ envio-->
+                <div class="cls_entradas">
+                    <button type="submit" id="btnEnviar">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="./fontes/main.js"></script>
+</body>
+</html>

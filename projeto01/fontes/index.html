@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--titulo da pagina-->
+    <title>Games Shop - A sua loja de games</title>
+    <!--link p/ arquivo de estilizacoes-->
+    <link rel="stylesheet" href="../estilos/main.css">
+    <!--fontes personalizadas-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- cabecalho principal
+        classes utilizadas : container, contact-methods => div
+            store-front => img
+            brands-list => lista ul -->
+    <header>
+        <div class="container">
+            <h1>Games Shop</h1>
+            <!--menu de navegacao: lista nao ordenada => about, contact -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#about">Sobre a loja</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- == secoes: about, contact 
+            1 secao: about -->
+        <section id="about">
+            <div class="container">
+                <!--adicionando a imagem: sobre-->
+                <img class="store-front" src="../imagens/loja.jpg" alt="Fachada da loja Games Shop">
+                <div>
+                    <h2>Sobre a loja</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eaque error quas animi officiis, provident neque ut iste quisquam temporibus veniam enim facilis quo illo ipsam fuga eveniet repellat? Voluptatem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officia dolores aut pariatur iste eos ad voluptatibus dolorem et ex culpa, sit, cumque eum error architecto harum. Omnis, fuga nemo.
+                    </p>
+                    <!-- lista nao ordenada : imagens => nintendo, xbox, playstation -->
+                    <ul class="brands-list">
+                        <li><img src="../imagens/nintendo.png" alt="Nintendo"></li>
+                        <li><img src="../imagens/xbox.png" alt="Xbox"></li>
+                        <li><img src="../imagens/playstation.png" alt="Playstation"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 2 secao: contact -->
+        <section id="contact">
+            <div class="container">
+                <!--titulo principal-->
+                <h2>Contato</h2>
+                <div class="contact-methods">
+                    <!--== subsecoes 
+                        1: fale conosco -->
+                    <div>
+                        <h3>Fale conosco</h3>
+                        <!--formulario p/ passar o contato-->
+                        <form action="">
+                            <!--campos de entrada-->
+                            <input type="text" id="des_nome" name="strNome" placeholder="Seu nome" required>
+                            <input type="email" id="des_email" name="strEmail" placeholder="Seu e-mail" required>
+                            <input type="tel" id="des_contato" name="strContato" placeholder="Seu telefone (opcional)">
+                            <textarea name="strMSG" id="des_msg" placeholder="Sua mensagem" required></textarea>
+                            <!--botao p/ enviar-->
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <!-- 2: nos acompanhe -->
+                    <div>
+                        <h3>Nos acompanhe</h3>
+                        <!-- lista nao ordenada: logos-> instagram, facebook, youtube -->
+                        <ul class="social-links">
+                            <li>
+                                <a href="#instagram" title="Siga-nos no Instagram">
+                                    <img id="instagram" src="../imagens/instagram.png" alt="Logo do Instagram">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#facebook" title="Siga-nos no Facebook">
+                                    <img id="facebook" src="../imagens/facebook.png" alt="Logo do Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#youtube" title="Visite nosso canal no YouTube">
+                                    <img id="youtube" src="../imagens/youtube.png" alt="Logo do YouTube">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 3: venha ate nos -->
+                    <div>
+                        <h3>Venha até nós</h3>
+                        <p>Rua JavaScript n° 124, Vila HTML - São Paulo - SP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!--exibe direitos autorais-->
+        <div class="container">
+            <p>&copy; Games Shop - Todos os direitos reservados - 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
