@@ -15,9 +15,6 @@ class Carro extends Veiculo{
             console.log('acelerando carro ' + this.qtdPortas + ' portas');
         }
     }
-
-   
-
     // ---
 }
 
