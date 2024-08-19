@@ -9,11 +9,11 @@ class Carro extends Veiculo{
 
         // atributos do carro
         this.qtdPortas = qtdPortas;
+    }
 
-         // funcoes
-        this.acelerar = function(){
-            console.log('acelerando carro ' + this.qtdPortas + ' portas');
-        }
+    // funcoes
+    acelerar = function(){
+        console.log('acelerando carro ' + this.qtdPortas + ' portas');
     }
     // ---
 }

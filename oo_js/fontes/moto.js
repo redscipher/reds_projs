@@ -9,11 +9,11 @@ class Moto extends Veiculo{
 
         // atributos da moto
         this.possui02Rodas = true;
+    }
 
-        // funcoes
-        this.acelerar = function(){
-            console.log('acelerando moto');
-        }
+    // funcoes
+    acelerar = function(){
+        console.log('acelerando moto');
     }
     // ---
 }

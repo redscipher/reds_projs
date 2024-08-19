@@ -3,11 +3,11 @@ class Veiculo {
     constructor(nome, marca){
         this.nome = nome;
         this.marca = marca;
+    }
 
-        // funcoes
-        this.acelerar = function(){
-            console.log('Acelerando o veiculo');
-        }
+    // funcoes
+    acelerar = function(){
+        console.log('Acelerando o veiculo');
     }
     // ----
 }
