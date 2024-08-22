@@ -1,21 +1,24 @@
 // importacao
 const Aluno = require('./alunos');
+// objetos
+const prompt = require('prompt-sync')();
 
 // vetor p/ guardar os objetos
 const turmaA = [];
-// objeto
-const aluno1 = new Aluno('fulano', 10);
-const aluno2 = new Aluno('cricrano', 7);
-const aluno3 = new Aluno('beltrano', 3);
-const aluno4 = new Aluno('leidiane', 5);
-const aluno5 = new Aluno('cleyson', 9);
 
-// adiciona os alunos no array
-turmaA.push(aluno1);
-turmaA.push(aluno2);
-turmaA.push(aluno3);
-turmaA.push(aluno4);
-turmaA.push(aluno5);
+let esperaInputUsuario = function(){
+    try {
+        // exibe mensagem ao usuario + retorno
+        const nomeAluno = prompt('Digite o nome do aluno: ');
+        const notaAluno = prompt('Digite a nota do aluno: ');
+        console.log('\n');
+        // adiciona novo item na lista turma
+        const alunoNovo = new Aluno(nomeAluno, notaAluno);
+        turmaA.push(alunoNovo);
+    } catch (error) {
+        console.log(error.stack);
+    }
+}
 
 // funcao p/ retornar alunos
 const validaQualificados = function(notaFiltro){
@@ -30,8 +33,38 @@ const validaQualificados = function(notaFiltro){
     }
 }
 
-// busca os alunos que possuem uma nota >= 6
-const alunos = validaQualificados(6);
+let preencheVetor = function(){
+    try {
+        // variavel resposta + controle
+        let resposta = prompt(`Entrar com aluno nº ${turmaA.length + 1} ('S'=sim, 'N'=não): `);
+        console.log('\n');
+        let controle = resposta == 'S' || resposta == 's' ? true: false;
+        // -------------
+        let flgLoop = false;
+        // loop
+        while(controle){
+            flgLoop = true;
+            // entrada
+            esperaInputUsuario();
+            // exibe mensagem novamento
+            resposta = prompt(`Entrar com aluno nº ${turmaA.length + 1} ('S'=sim, 'N'=não): `);
+            console.log('\n');
+            controle = resposta == 'S' || resposta =='s' ? true: false;
+        }
+        // validacao
+        if (flgLoop) {
+            // variavel nota minima p/ passar
+            let notaMinima = parseFloat(prompt(`Digite a nota minima p/ passar: `));
+            console.log('\n');
+            // valida com base na nota passada
+            const alunos = validaQualificados(notaMinima);
+            // exibicao resultado
+            console.log(...alunos);
+        } 
+    } catch (error) {
+        console.log(error.stack);
+    }
+}
 
-// exibicao
-console.log(...alunos);
+// chamada a funcao
+preencheVetor();
