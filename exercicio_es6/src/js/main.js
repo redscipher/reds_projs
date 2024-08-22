@@ -54,10 +54,10 @@ let preencheVetor = function(){
         // validacao
         if (flgLoop) {
             // variavel nota minima p/ passar
-            let notaMinima = parseFloat(prompt(`Digite a nota minima p/ passar: `));
-            console.log('\n');
+            // let notaMinima = parseFloat(prompt(`Digite a nota minima p/ passar: `));
+            // console.log('\n');
             // valida com base na nota passada
-            const alunos = validaQualificados(notaMinima);
+            const alunos = validaQualificados(6);
             // exibicao resultado
             console.log(...alunos);
         } 
