@@ -1,9 +1,12 @@
+// ==> primeira forma p/ importar sem 'require' ( fora do namespace )
+// import promptSync from 'prompt-sync';
+// const prompt2 = promptSync();
+
 // pasta virtual
 namespace main{
     // importacao
-    declare var require: any;
     const prompt = require('prompt-sync')();
-
+    
     // funcoes
     let multiplicar = function(num1: number, num2: number): number{
         // var retorno
