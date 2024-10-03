@@ -5,6 +5,11 @@ export const GitHubSessao = styled.div`
   margin-bottom: 64px;
 
   img {
-    weight: 160px;
+    weight: 157px;
+
+    @media (max-width: 768px) {
+      height: auto;
+      width: 100%;
+    }
   }
 `
