@@ -20,7 +20,7 @@ const BotaoPerigo = styled(Botao)`
   background-color: red;
   color: #fff;
 
-  // executa estila de um elemento interno: = sass/less
+  // executa estilazacao de um elemento interno: = sass/less
   span {
     text-decoration: line-through;
   }
