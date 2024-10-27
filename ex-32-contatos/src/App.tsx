@@ -1,4 +1,5 @@
 // importa componentes
+import CRTabAgenda from './containers/tabela'
 import CSSGlobal from './estilos/globais' //estilizacao global
 
 // cria aplicacao
@@ -7,7 +8,7 @@ function App() {
     <>
       <CSSGlobal />
       <div className="container">
-        <h1>Ola</h1>
+        <CRTabAgenda></CRTabAgenda>
       </div>
     </>
   )
