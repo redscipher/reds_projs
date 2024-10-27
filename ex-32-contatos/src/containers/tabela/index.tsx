@@ -1,10 +1,10 @@
 // importa estilos
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import * as E from './estilos'
 
 // tipo
 type Props = {
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 // cria componente
