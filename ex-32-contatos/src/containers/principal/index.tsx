@@ -2,6 +2,7 @@
 import { ReactNode } from 'react'
 import * as E from './estilos'
 import CRTabAgenda from '../componentes/tabela'
+import CRFormulario from '../componentes/formulario'
 
 // tipo
 type Props = {
@@ -17,6 +18,7 @@ const CRPrincipal = (_Props: Props) => {
         <E.SCPrincipal>
           <div className="container">
             <CRTabAgenda />
+            <CRFormulario />
           </div>
         </E.SCPrincipal>
       </div>
