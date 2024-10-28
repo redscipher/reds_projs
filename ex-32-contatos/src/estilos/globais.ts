@@ -41,6 +41,10 @@ const CSBotao = styled.button.attrs({
   }
 `
 
+const CSTabLinha = styled.tr`
+  border: none;
+`
+
 // exportacoes
 export default CSSGlobal
-export { CSBotao }
+export { CSBotao, CSTabLinha }

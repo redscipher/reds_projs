@@ -56,10 +56,6 @@ const CSTabRoda = styled.tfoot`
   }
 `
 
-const CSTabLinha = styled.tr`
-  border: none;
-`
-
 const CSTabCorpo = styled.tbody`
   td {
     color: ${Cores.branco};
@@ -75,4 +71,4 @@ const CSTabCorpo = styled.tbody`
 `
 
 // exportacoes
-export { CSTabela, CSTabCab, CSTabRoda, CSTabCorpo, CSTabLinha }
+export { CSTabela, CSTabCab, CSTabRoda, CSTabCorpo }

@@ -1,6 +1,8 @@
 // importa estilos
 import { ReactNode } from 'react'
 import * as E from './estilos'
+import * as G from '../../../estilos/globais'
+import CSTabLinha from './linhas'
 
 // tipo
 type Props = {
@@ -16,43 +18,31 @@ const CRTabAgenda = (_Props: Props) => {
         <caption>Lista de pessoas</caption>
         <E.CSTabCab>
           {/* colunas */}
-          <E.CSTabLinha>
+          <G.CSTabLinha>
             <th>nome completo</th>
             <th>E-mail</th>
             <th colSpan={2}>Telefone</th>
-          </E.CSTabLinha>
+          </G.CSTabLinha>
         </E.CSTabCab>
         <E.CSTabCorpo>
           {/* dados */}
-          <E.CSTabLinha>
-            <td>Nome Teste</td>
-            <td>emailteste@gmail.com</td>
-            <td>34999999999</td>
-            <td>
-              <input
-                type="checkbox"
-                onClick={() => console.log('clickou')}
-              ></input>
-            </td>
-          </E.CSTabLinha>
-          <E.CSTabLinha>
-            <td>Nome Teste 2</td>
-            <td>emailteste2@gmail.com</td>
-            <td>34988888888</td>
-            <td>
-              <input
-                type="checkbox"
-                onClick={() => console.log('clickou 2')}
-              ></input>
-            </td>
-          </E.CSTabLinha>
+          <CSTabLinha
+            Nome={'Teste'}
+            Email={'email@hotmail.com'}
+            Contato={'34999999999'}
+          ></CSTabLinha>
+          <CSTabLinha
+            Nome={'Teste2'}
+            Email={'email@gmail.com'}
+            Contato={'34988888888'}
+          ></CSTabLinha>
         </E.CSTabCorpo>
         <E.CSTabRoda>
           {/* resumo */}
-          <E.CSTabLinha>
+          <G.CSTabLinha>
             <td colSpan={3}>Total: </td>
             <td>1</td>
-          </E.CSTabLinha>
+          </G.CSTabLinha>
         </E.CSTabRoda>
       </E.CSTabela>
     </div>
