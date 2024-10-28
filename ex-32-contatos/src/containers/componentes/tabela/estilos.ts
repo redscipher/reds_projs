@@ -9,6 +9,7 @@ const CSTabela = styled.table.attrs({
 })`
   /* estilos extras */
   font-family: 'Playfair Display', serif;
+
   /* elementos */
   th,
   td {
@@ -60,6 +61,10 @@ const CSTabLinha = styled.tr`
 `
 
 const CSTabCorpo = styled.tbody`
+  td {
+    color: ${Cores.branco};
+  }
+
   /* estado: mouse em cima */
   &:hover {
     /* escura cor um pouco */

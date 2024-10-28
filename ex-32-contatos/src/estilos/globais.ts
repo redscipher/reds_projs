@@ -1,5 +1,7 @@
 // importacoes
-import { createGlobalStyle } from 'styled-components'
+import { darken } from 'polished'
+import styled, { createGlobalStyle } from 'styled-components'
+import Cores from './cores'
 
 // cria estilizacao global
 const CSSGlobal = createGlobalStyle`
@@ -20,5 +22,24 @@ const CSSGlobal = createGlobalStyle`
   };
 `
 
+const CSBotao = styled.button.attrs({
+  className: 'btn my-1'
+})`
+  /* extras */
+  background-color: ${darken(0.35, Cores.cinza)};
+  color: ${Cores.cinza};
+  border-color: ${Cores.cinza};
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: ${darken(0.3, Cores.cinza)};
+    border-color: ${darken(0.3, Cores.cinza)};
+    /* posicao: passar impressao flutuante */
+    transform: translateY(-3px);
+  }
+`
+
 // exportacoes
 export default CSSGlobal
+export { CSBotao }

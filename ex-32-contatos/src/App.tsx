@@ -1,7 +1,21 @@
 // importa componentes
-import CRCabecalho from './containers/cabecalho'
-import CRPrincipal from './containers/principal'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import CSSGlobal from './estilos/globais' //estilizacao global
+import Inicial from './paginas/inicial'
+import Cadastro from './paginas/cadastro'
+import CRCabecalho from './containers/cabecalho'
+
+// cria as rotas da aplicacao
+const Rotas = createBrowserRouter([
+  {
+    path: '/',
+    element: <Inicial></Inicial>
+  },
+  {
+    path: '/cadastro',
+    element: <Cadastro></Cadastro>
+  }
+])
 
 // cria aplicacao
 function App() {
@@ -9,7 +23,7 @@ function App() {
     <>
       <CSSGlobal />
       <CRCabecalho />
-      <CRPrincipal />
+      <RouterProvider router={Rotas}></RouterProvider>
     </>
   )
 }

@@ -11,36 +11,34 @@ type Props = {
 const CRTabAgenda = (_Props: Props) => {
   // def retorno
   return (
-    <>
-      <div className="table-responsive">
-        <E.CSTabela>
-          <caption>Lista de pessoas</caption>
-          <E.CSTabCab>
-            {/* colunas */}
-            <E.CSTabLinha>
-              <th>nome completo</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-            </E.CSTabLinha>
-          </E.CSTabCab>
-          <E.CSTabCorpo>
-            {/* dados */}
-            <E.CSTabLinha>
-              <td>Nome Teste</td>
-              <td>emailteste@gmail.com</td>
-              <td>34999999999</td>
-            </E.CSTabLinha>
-          </E.CSTabCorpo>
-          <E.CSTabRoda>
-            {/* resumo */}
-            <E.CSTabLinha>
-              <td colSpan={2}>Total: </td>
-              <td>1</td>
-            </E.CSTabLinha>
-          </E.CSTabRoda>
-        </E.CSTabela>
-      </div>
-    </>
+    <div className="table-responsive me-3">
+      <E.CSTabela>
+        <caption>Lista de pessoas</caption>
+        <E.CSTabCab>
+          {/* colunas */}
+          <E.CSTabLinha>
+            <th>nome completo</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+          </E.CSTabLinha>
+        </E.CSTabCab>
+        <E.CSTabCorpo>
+          {/* dados */}
+          <E.CSTabLinha>
+            <td>Nome Teste</td>
+            <td>emailteste@gmail.com</td>
+            <td>34999999999</td>
+          </E.CSTabLinha>
+        </E.CSTabCorpo>
+        <E.CSTabRoda>
+          {/* resumo */}
+          <E.CSTabLinha>
+            <td colSpan={2}>Total: </td>
+            <td>1</td>
+          </E.CSTabLinha>
+        </E.CSTabRoda>
+      </E.CSTabela>
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@
 import { ReactNode } from 'react'
 import * as E from './estilos'
 import CRTabAgenda from '../componentes/tabela'
-import CRFormulario from '../componentes/formulario'
+import { CSBotao } from '../../estilos/globais'
 
 // tipo
 type Props = {
@@ -14,13 +14,21 @@ const CRPrincipal = (_Props: Props) => {
   // def retorno
   return (
     <div className="container-fluid">
-      <div className="row flex-grow-1">
-        <E.SCPrincipal>
-          <div className="container">
-            <CRTabAgenda />
-            <CRFormulario />
-          </div>
-        </E.SCPrincipal>
+      <div className="container">
+        <div className="row flex-grow-1">
+          <E.SCPrincipal>
+            <div className="col-8">
+              <CRTabAgenda />
+            </div>
+            <div className="col-4">
+              <E.CSBotaoAdc type="button" to="/cadastro">
+                Adicionar
+              </E.CSBotaoAdc>
+              <CSBotao type="button">Editar</CSBotao>
+              <E.CSBotaoDel type="button">Remover</E.CSBotaoDel>
+            </div>
+          </E.SCPrincipal>
+        </div>
       </div>
     </div>
   )
