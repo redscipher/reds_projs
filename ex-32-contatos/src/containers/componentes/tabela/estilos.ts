@@ -12,7 +12,7 @@ const CSTabela = styled.table.attrs({
   /* elementos */
   th,
   td {
-    color: #c2c2c2;
+    color: ${Cores.cinza};
     background-color: ${Cores.verdeClaro};
   }
 `
