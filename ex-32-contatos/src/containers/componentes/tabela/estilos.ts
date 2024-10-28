@@ -19,6 +19,13 @@ const CSTabela = styled.table.attrs({
 
 const CSTabCab = styled.thead`
   color: ${Cores.pretoSombra};
+
+  /* elementos */
+  th {
+    /* aplica uma sombra */
+    box-shadow: 0 8px 8px ${Cores.pretoSombra};
+  }
+
   /* pseudo-elementos */
   th:first-child {
     border-top-left-radius: 16px;
@@ -31,6 +38,12 @@ const CSTabCab = styled.thead`
 
 const CSTabRoda = styled.tfoot`
   text-align: center;
+
+  /* elementos */
+  td {
+    /* aplica uma sombra */
+    box-shadow: 0 8px 8px ${Cores.pretoSombra};
+  }
 
   /* pseudo-elementos */
   td:first-child {
@@ -47,8 +60,12 @@ const CSTabLinha = styled.tr`
 `
 
 const CSTabCorpo = styled.tbody`
+  /* estado: mouse em cima */
   &:hover {
-    background-color: ${darken(0.5, Cores.verdeClaro)};
+    /* escura cor um pouco */
+    background-color: ${darken(0.9, Cores.verdeClaro)};
+    /* posicao: passar impressao flutuante */
+    transform: translateY(-3px);
   }
 `
 
