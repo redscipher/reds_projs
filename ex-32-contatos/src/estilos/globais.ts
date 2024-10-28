@@ -2,6 +2,7 @@
 import { darken } from 'polished'
 import styled, { createGlobalStyle } from 'styled-components'
 import Cores from './cores'
+import { Link } from 'react-router-dom'
 
 // cria estilizacao global
 const CSSGlobal = createGlobalStyle`

@@ -39,5 +39,9 @@ const CSBotaoAdc = styled(CSBotao).attrs({
   }
 `
 
+const CSBotaoEditar = styled(CSBotao).attrs({
+  as: Link
+})``
+
 // exportacoes
-export { SCPrincipal, CSBotaoDel, CSBotaoAdc }
+export { SCPrincipal, CSBotaoDel, CSBotaoAdc, CSBotaoEditar }

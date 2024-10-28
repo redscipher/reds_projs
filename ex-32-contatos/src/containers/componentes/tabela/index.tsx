@@ -9,6 +9,7 @@ type Props = {
 
 // cria componente
 const CRTabAgenda = (_Props: Props) => {
+
   // def retorno
   return (
     <div className="table-responsive me-3">
@@ -19,7 +20,7 @@ const CRTabAgenda = (_Props: Props) => {
           <E.CSTabLinha>
             <th>nome completo</th>
             <th>E-mail</th>
-            <th>Telefone</th>
+            <th colSpan={2}>Telefone</th>
           </E.CSTabLinha>
         </E.CSTabCab>
         <E.CSTabCorpo>
@@ -28,12 +29,26 @@ const CRTabAgenda = (_Props: Props) => {
             <td>Nome Teste</td>
             <td>emailteste@gmail.com</td>
             <td>34999999999</td>
+            <td>
+              <input
+                type="checkbox"
+                onClick={() => console.log('clickou')}
+              ></input>
+            </td>
+          </E.CSTabLinha>
+          <E.CSTabLinha>
+            <td>Nome Teste 2</td>
+            <td>emailteste2@gmail.com</td>
+            <td>34988888888</td>
+            <td>
+              <input type="checkbox" onClick={() => console.log('clickou 2')}></input>
+            </td>
           </E.CSTabLinha>
         </E.CSTabCorpo>
         <E.CSTabRoda>
           {/* resumo */}
           <E.CSTabLinha>
-            <td colSpan={2}>Total: </td>
+            <td colSpan={3}>Total: </td>
             <td>1</td>
           </E.CSTabLinha>
         </E.CSTabRoda>
