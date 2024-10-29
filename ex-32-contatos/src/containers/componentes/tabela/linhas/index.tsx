@@ -2,7 +2,7 @@
 import * as E from './estilos'
 import * as G from '../../../../globais/globais'
 import { useState } from 'react'
-import ClsContato from '../../../../globais/clsContatos'
+import ClsContato from '../../../../globais/classes'
 import { useDispatch } from 'react-redux'
 import { DesmarcarLinhasAcao } from '../../../../armazem/redutores/contatos'
 
@@ -17,7 +17,7 @@ const CSTabLinha = ({ Nome, Email, Contato, Selecionado, id }: ClsContato) => {
   const MarcarDesmarcar = () => {
     setFlgSel(!flgSel)
     // manda p/ redux gerenciar o estado
-    despacho(DesmarcarLinhasAcao(!flgSel))
+    despacho(DesmarcarLinhasAcao({ id, checado: !flgSel }))
   }
 
   // def retorno

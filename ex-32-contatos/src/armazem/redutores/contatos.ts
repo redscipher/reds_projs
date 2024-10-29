@@ -1,12 +1,7 @@
 // importacoes
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import ClsContato from '../../globais/clsContatos'
 import { DesmarcarLinhas } from '../../funcoes/funcoesComuns'
-
-// tipo
-type TContatos = {
-  itens: ClsContato[]
-}
+import { TContatos } from '../../globais/tipos'
 
 // objeto contatos
 const contatos: TContatos = {
@@ -35,8 +30,11 @@ const contatosFatia = createSlice({
   // acoes
   reducers: {
     // nome_redutor: funcao
-    DesmarcarLinhasAcao: (estado, acao: PayloadAction<boolean>) => {
-      return DesmarcarLinhas(estado, acao, contatos.itens)
+    DesmarcarLinhasAcao: (
+      estado,
+      acao: PayloadAction<{ id: number; checado: boolean }>
+    ) => {
+      return DesmarcarLinhas(estado, acao)
     }
   }
 })

@@ -1,15 +1,20 @@
 import { PayloadAction } from '@reduxjs/toolkit'
-import ClsContato from '../globais/clsContatos'
+import { WritableDraft } from 'immer'
+import { TContatos } from '../globais/tipos'
 
 // funcoes
 function DesmarcarLinhas(
-  estado: unknown,
-  acao: PayloadAction<boolean>,
-  itens: ClsContato[]
+  estado: WritableDraft<TContatos>,
+  acao: PayloadAction<{ id: number; checado: boolean }>
 ): void {
   console.log(estado)
-  console.log(acao)
-  console.log(itens)
+  console.log(acao.payload)
+  // loop p/ desmarcar demais itens
+  estado.itens.map((item, idItem) => {
+    if (item.id !== acao.payload.id) {
+      estado.itens[idItem].Selecionado = false
+    }
+  })
 }
 
 // exporta funcao
