@@ -1,7 +1,5 @@
 // importacoes
-import * as E from './estilos'
 import * as G from '../../../../globais/globais'
-import { ChangeEvent } from 'react'
 import ClsContato from '../../../../globais/classes'
 import { useDispatch } from 'react-redux'
 import { DesmarcarLinhasAcao } from '../../../../armazem/redutores/contatos'
@@ -12,7 +10,7 @@ const CSTabLinha = ({ Nome, Email, Contato, Selecionado, id }: ClsContato) => {
   const despacho = useDispatch()
 
   // funcoes
-  const MarcarDesmarcar = (evento: ChangeEvent<HTMLInputElement>) => {
+  const MarcarDesmarcar = () => {
     // manda p/ redux gerenciar o estado
     despacho(DesmarcarLinhasAcao({ id, checado: !Selecionado }))
   }
