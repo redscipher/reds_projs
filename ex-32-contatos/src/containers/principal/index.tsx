@@ -17,10 +17,10 @@ const CRPrincipal = (_Props: Props) => {
       <div className="container">
         <div className="row flex-grow-1">
           <E.SCPrincipal>
-            <div className="col-8">
+            <div className="col-md-8 col-12">
               <CRTabAgenda />
             </div>
-            <div className="col-4">
+            <div className="col-md-4 col-12">
               <CSBotaoAdc type="button" to="/cadastro">
                 Adicionar
               </CSBotaoAdc>

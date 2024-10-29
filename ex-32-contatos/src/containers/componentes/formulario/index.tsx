@@ -62,13 +62,13 @@ const CRFormulario: React.FC = () => {
   return (
     <>
       <div className="container">
-        <div className="row col-2 offset-2 mb-3">
+        <div className="row col-md-2 col-10 offset-md-2 offset-1 mb-3">
           <CSBotao type="button" onClick={() => NavegarEntreRotas('/')}>
             Voltar
           </CSBotao>
         </div>
         <div className="row">
-          <div className="col-8 offset-2">
+          <div className="col-md-8 col-sm-12 offset-md-2">
             <form action="" className="needs-validation">
               {/* nome */}
               <div className="form-floating mb-3 has-validation">
