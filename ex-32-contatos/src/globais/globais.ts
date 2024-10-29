@@ -41,10 +41,34 @@ const CSBotao = styled.button.attrs({
   }
 `
 
+const CSBotaoDel = styled(CSBotao)`
+  background-color: ${darken(0.35, Cores.laranja)};
+  color: ${Cores.laranja};
+  border-color: ${Cores.laranja};
+
+  &:hover {
+    color: ${darken(0.3, Cores.laranja)};
+    border-color: ${darken(0.3, Cores.laranja)};
+  }
+`
+
+const CSBotaoAdc = styled(CSBotao).attrs({
+  as: Link
+})`
+  background-color: ${darken(0.2, Cores.verde)};
+  color: ${Cores.verde};
+  border-color: ${Cores.verde};
+
+  &:hover {
+    color: ${darken(0.2, Cores.verde)};
+    border-color: ${darken(0.2, Cores.verde)};
+  }
+`
+
 const CSTabLinha = styled.tr`
   border: none;
 `
 
 // exportacoes
 export default CSSGlobal
-export { CSBotao, CSTabLinha }
+export { CSBotao, CSTabLinha, CSBotaoAdc, CSBotaoDel }

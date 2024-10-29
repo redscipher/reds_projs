@@ -1,23 +1,20 @@
 // importacoes
 import * as E from './estilos'
 import * as G from '../../../../globais/globais'
-import { useState } from 'react'
+import { ChangeEvent } from 'react'
 import ClsContato from '../../../../globais/classes'
 import { useDispatch } from 'react-redux'
 import { DesmarcarLinhasAcao } from '../../../../armazem/redutores/contatos'
 
 // componente: efetua desestruturacao das propriedades passadas
 const CSTabLinha = ({ Nome, Email, Contato, Selecionado, id }: ClsContato) => {
-  // cria estados
-  const [flgSel, setFlgSel] = useState(Selecionado)
   // cria um despacho
   const despacho = useDispatch()
 
   // funcoes
-  const MarcarDesmarcar = () => {
-    setFlgSel(!flgSel)
+  const MarcarDesmarcar = (evento: ChangeEvent<HTMLInputElement>) => {
     // manda p/ redux gerenciar o estado
-    despacho(DesmarcarLinhasAcao({ id, checado: !flgSel }))
+    despacho(DesmarcarLinhasAcao({ id, checado: !Selecionado }))
   }
 
   // def retorno
@@ -29,7 +26,7 @@ const CSTabLinha = ({ Nome, Email, Contato, Selecionado, id }: ClsContato) => {
       <td>
         <input
           type="checkbox"
-          checked={flgSel}
+          checked={Selecionado}
           onChange={MarcarDesmarcar}
         ></input>
       </td>

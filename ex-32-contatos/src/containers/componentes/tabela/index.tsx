@@ -15,6 +15,7 @@ type Props = {
 const CRTabAgenda = (_Props: Props) => {
   // objeto
   const { itens } = useSelector((estado: RootReducer) => estado.contatos)
+
   // def retorno
   return (
     <div className="table-responsive me-3">

@@ -15,33 +15,9 @@ const SCPrincipal = styled.main`
   margin-top: 16px;
 `
 
-const CSBotaoDel = styled(CSBotao)`
-  background-color: ${darken(0.35, Cores.laranja)};
-  color: ${Cores.laranja};
-  border-color: ${Cores.laranja};
-
-  &:hover {
-    color: ${darken(0.3, Cores.laranja)};
-    border-color: ${darken(0.3, Cores.laranja)};
-  }
-`
-
-const CSBotaoAdc = styled(CSBotao).attrs({
-  as: Link
-})`
-  background-color: ${darken(0.2, Cores.verde)};
-  color: ${Cores.verde};
-  border-color: ${Cores.verde};
-
-  &:hover {
-    color: ${darken(0.2, Cores.verde)};
-    border-color: ${darken(0.2, Cores.verde)};
-  }
-`
-
 const CSBotaoEditar = styled(CSBotao).attrs({
   as: Link
 })``
 
 // exportacoes
-export { SCPrincipal, CSBotaoDel, CSBotaoAdc, CSBotaoEditar }
+export { SCPrincipal, CSBotaoEditar }

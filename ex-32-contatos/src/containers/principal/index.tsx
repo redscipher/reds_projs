@@ -2,6 +2,7 @@
 import { ReactNode } from 'react'
 import * as E from './estilos'
 import CRTabAgenda from '../componentes/tabela'
+import { CSBotaoAdc, CSBotaoDel } from '../../globais/globais'
 
 // tipo
 type Props = {
@@ -20,13 +21,13 @@ const CRPrincipal = (_Props: Props) => {
               <CRTabAgenda />
             </div>
             <div className="col-4">
-              <E.CSBotaoAdc type="button" to="/cadastro">
+              <CSBotaoAdc type="button" to="/cadastro">
                 Adicionar
-              </E.CSBotaoAdc>
+              </CSBotaoAdc>
               <E.CSBotaoEditar type="button" to="/cadastro">
                 Editar
               </E.CSBotaoEditar>
-              <E.CSBotaoDel type="button">Remover</E.CSBotaoDel>
+              <CSBotaoDel type="button">Remover</CSBotaoDel>
             </div>
           </E.SCPrincipal>
         </div>
