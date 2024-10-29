@@ -1,20 +1,16 @@
-// importacoes
-import { useNavigate } from 'react-router-dom'
+import { PayloadAction } from '@reduxjs/toolkit'
+import ClsContato from '../globais/clsContatos'
 
-function FuncoesComuns() {
-  // objeto
-  const navegar = useNavigate()
-
-  // funcoes
-  function NavegarEntreRotas(StrRota: string): void {
-    navegar(StrRota)
-  }
-
-  //== def retorno: funcoes
-  return {
-    NavegarEntreRotas
-  }
+// funcoes
+function DesmarcarLinhas(
+  estado: unknown,
+  acao: PayloadAction<boolean>,
+  itens: ClsContato[]
+): void {
+  console.log(estado)
+  console.log(acao)
+  console.log(itens)
 }
 
-// exportando objeto principal que contem todas as funcoes
-export default FuncoesComuns
+// exporta funcao
+export { DesmarcarLinhas }

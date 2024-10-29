@@ -1,6 +1,6 @@
 // importacoes
-import { CSBotao } from '../../../estilos/globais'
-import FuncoesComuns from '../../../funcoes/funcoesComuns'
+import { CSBotao } from '../../../globais/globais'
+import FuncoesComuns from '../../../funcoes/funcoesComunsComp'
 
 // componente
 const CRFormulario = () => {

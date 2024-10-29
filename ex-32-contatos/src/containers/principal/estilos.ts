@@ -1,9 +1,9 @@
 // importacoes
 import styled from 'styled-components'
-import Cores from '../../estilos/cores'
+import Cores from '../../globais/cores'
 import { darken } from 'polished'
 import { Link } from 'react-router-dom'
-import { CSBotao } from '../../estilos/globais'
+import { CSBotao } from '../../globais/globais'
 
 // estilos
 const SCPrincipal = styled.main`

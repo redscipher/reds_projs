@@ -1,7 +1,7 @@
 // importacoes
 import styled from 'styled-components'
 import { darken } from 'polished'
-import Cores from '../../../estilos/cores'
+import Cores from '../../../globais/cores'
 
 // estilos
 const CSTabela = styled.table.attrs({

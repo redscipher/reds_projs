@@ -1,6 +1,6 @@
 // importacoes
 import styled from 'styled-components'
-import Cores from '../../estilos/cores'
+import Cores from '../../globais/cores'
 
 // estilos
 const SCCabecalho = styled.header.attrs({

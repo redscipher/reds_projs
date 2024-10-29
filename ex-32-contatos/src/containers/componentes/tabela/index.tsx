@@ -1,8 +1,10 @@
 // importa estilos
 import { ReactNode } from 'react'
 import * as E from './estilos'
-import * as G from '../../../estilos/globais'
+import * as G from '../../../globais/globais'
 import CSTabLinha from './linhas'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../../armazem'
 
 // tipo
 type Props = {
@@ -11,6 +13,8 @@ type Props = {
 
 // cria componente
 const CRTabAgenda = (_Props: Props) => {
+  // objeto
+  const { itens } = useSelector((estado: RootReducer) => estado.contatos)
   // def retorno
   return (
     <div className="table-responsive me-3">
@@ -25,17 +29,19 @@ const CRTabAgenda = (_Props: Props) => {
           </G.CSTabLinha>
         </E.CSTabCab>
         <E.CSTabCorpo>
-          {/* dados */}
-          <CSTabLinha
-            Nome={'Teste'}
-            Email={'email@hotmail.com'}
-            Contato={'34999999999'}
-          ></CSTabLinha>
-          <CSTabLinha
-            Nome={'Teste2'}
-            Email={'email@gmail.com'}
-            Contato={'34988888888'}
-          ></CSTabLinha>
+          {/* loop p/ criar as linhas da tabela */}
+          {itens.map((item) => {
+            return (
+              <CSTabLinha
+                key={item.id}
+                id={item.id}
+                Nome={item.Nome}
+                Email={item.Email}
+                Contato={item.Contato}
+                Selecionado={item.Selecionado}
+              ></CSTabLinha>
+            )
+          })}
         </E.CSTabCorpo>
         <E.CSTabRoda>
           {/* resumo */}
