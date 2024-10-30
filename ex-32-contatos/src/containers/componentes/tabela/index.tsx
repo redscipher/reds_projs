@@ -48,7 +48,7 @@ const CRTabAgenda = (_Props: Props) => {
           {/* resumo */}
           <G.CSTabLinha>
             <td colSpan={3}>Total: </td>
-            <td>1</td>
+            <td>{itens.length}</td>
           </G.CSTabLinha>
         </E.CSTabRoda>
       </E.CSTabela>
