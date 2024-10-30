@@ -4,7 +4,8 @@ import {
   DesmarcarLinhas,
   AdicionarContato,
   RemoverContato,
-  EditarContato
+  EditarContato,
+  MarcarEdicao
 } from '../../funcoes/funcoesComuns'
 import { PropsAdicao, TContatos } from '../../globais/tipos'
 import ClsContato from '../../globais/classes'
@@ -38,7 +39,7 @@ const contatosFatia = createSlice({
       return EditarContato(estado, acao)
     },
     MarcarEdicaoAdicaoAcao: (estado, acao: PayloadAction<boolean>) => {
-      estado.flgEditando = acao.payload
+      return MarcarEdicao(estado, acao)
     }
   }
 })

@@ -54,11 +54,12 @@ const CRFormulario: React.FC = () => {
       const itemEdicao = itens.find((item) => item.Selecionado === true)
       // validacao
       if (itemEdicao) {
-        console.log('entrei aqui na edicao')
         // set valores
         setStrNome(itemEdicao.Nome)
         setStrEmail(itemEdicao.Email)
         setStrContato(itemEdicao.Contato)
+      } else {
+        NavegarEntreRotas('/')
       }
     }
   }

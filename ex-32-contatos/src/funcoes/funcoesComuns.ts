@@ -82,5 +82,27 @@ function EditarContato(
   }
 }
 
+function MarcarEdicao(estado: TContatos, acao: PayloadAction<boolean>) {
+  // padrao
+  estado.flgEditando = acao.payload
+  // validacao
+  if (acao.payload) {
+    // busca o index do item
+    const itemSel = estado.itens.find((item) => {
+      if (item.Selecionado === true) return item
+    })
+    // remove item
+    if (!itemSel) {
+      alert('Aviso: Marque o checkbox da linha que deseja editar.')
+    }
+  }
+}
+
 // exporta funcao
-export { DesmarcarLinhas, AdicionarContato, RemoverContato, EditarContato }
+export {
+  DesmarcarLinhas,
+  AdicionarContato,
+  RemoverContato,
+  EditarContato,
+  MarcarEdicao
+}
