@@ -3,9 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import {
   DesmarcarLinhas,
   AdicionarContato,
-  RemoverContato
+  RemoverContato,
+  EditarContato
 } from '../../funcoes/funcoesComuns'
 import { PropsAdicao, TContatos } from '../../globais/tipos'
+import ClsContato from '../../globais/classes'
 
 // objeto contatos
 const contatos: TContatos = {
@@ -30,6 +32,9 @@ const contatosFatia = createSlice({
     },
     RemoverLinhaAcao: (estado) => {
       return RemoverContato(estado)
+    },
+    EditarLinhaAcao: (estado, acao: PayloadAction<ClsContato>) => {
+      return EditarContato(estado, acao)
     }
   }
 })
@@ -37,5 +42,9 @@ const contatosFatia = createSlice({
 // exportacoes : redutor
 export default contatosFatia.reducer
 // acoes
-export const { DesmarcarLinhasAcao, AdicionarLinhaAcao, RemoverLinhaAcao } =
-  contatosFatia.actions
+export const {
+  DesmarcarLinhasAcao,
+  AdicionarLinhaAcao,
+  RemoverLinhaAcao,
+  EditarLinhaAcao
+} = contatosFatia.actions

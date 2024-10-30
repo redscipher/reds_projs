@@ -1,5 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { TContatos, PropsAdicao } from '../globais/tipos'
+import ClsContato from '../globais/classes'
 
 // funcoes
 function DesmarcarLinhas(
@@ -35,7 +36,6 @@ function AdicionarContato(
     alert('Este contato já está cadastrado.')
     acao.payload.FlgAdicionado = false
   } else {
-    console.log('cheguei aqui')
     // set novo id
     acao.payload.contato.id = estado.itens.length + 1
     // adiciona novo item
@@ -57,5 +57,26 @@ function RemoverContato(estado: TContatos): void {
   }
 }
 
+function EditarContato(
+  estado: TContatos,
+  acao: PayloadAction<ClsContato>
+): void {
+  // busca o index do item
+  const itemEdicao = estado.itens.find((item) => {
+    if (item.Selecionado === true) return item
+  })
+  // remove item
+  if (itemEdicao) {
+    // efetua edicao
+    const idx = estado.itens.findIndex((item) => item === itemEdicao)
+    // altera contato
+    estado.itens[idx] = acao.payload
+    // desmarca contato
+    estado.itens[idx].Selecionado = false
+  } else {
+    alert('Aviso: Marque o checkbox da linha que deseja remover.')
+  }
+}
+
 // exporta funcao
-export { DesmarcarLinhas, AdicionarContato, RemoverContato }
+export { DesmarcarLinhas, AdicionarContato, RemoverContato, EditarContato }
