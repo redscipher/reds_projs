@@ -23,7 +23,7 @@ const CRFormulario: React.FC = () => {
   // efeitos
   useEffect(() => {
     InicializaEdicao()
-  })
+  }, [])
   // busca estado atual de variavel do conjunto de dados dos
   // contatos que controla acao sendo executada: inserindo ou editando
   const { itens, flgEditando } = useSelector(
