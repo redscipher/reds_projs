@@ -4,10 +4,15 @@ import { CSBotao } from '../../../globais/globais'
 import FuncoesComuns from '../../../funcoes/funcoesComunsComp'
 // jquery
 import $ from 'jquery'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { AdicionarLinhaAcao } from '../../../armazem/redutores/contatos'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  AdicionarLinhaAcao,
+  EditarLinhaAcao
+} from '../../../armazem/redutores/contatos'
 import { PropsAdicao } from '../../../globais/tipos'
+import ClsContato from '../../../globais/classes'
+import { RootReducer } from '../../../armazem'
 
 // componente
 const CRFormulario: React.FC = () => {
@@ -15,6 +20,15 @@ const CRFormulario: React.FC = () => {
   const [strNome, setStrNome] = useState('')
   const [strEmail, setStrEmail] = useState('')
   const [strContato, setStrContato] = useState('')
+  // efeitos
+  useEffect(() => {
+    InicializaEdicao()
+  })
+  // busca estado atual de variavel do conjunto de dados dos
+  // contatos que controla acao sendo executada: inserindo ou editando
+  const { itens, flgEditando } = useSelector(
+    (estado: RootReducer) => estado.contatos
+  )
   // despacho
   const despacho = useDispatch()
 
@@ -31,6 +45,22 @@ const CRFormulario: React.FC = () => {
     // Regex para telefones brasileiros no formato (XX) 9XXXX-XXXX
     const regex = /^\d{2}\d{5}\d{4}$/
     return regex.test(telefone)
+  }
+
+  const InicializaEdicao = () => {
+    // comportamento
+    if (flgEditando) {
+      // verifica id de contato selecionado
+      const itemEdicao = itens.find((item) => item.Selecionado === true)
+      // validacao
+      if (itemEdicao) {
+        console.log('entrei aqui na edicao')
+        // set valores
+        setStrNome(itemEdicao.Nome)
+        setStrEmail(itemEdicao.Email)
+        setStrContato(itemEdicao.Contato)
+      }
+    }
   }
 
   const SubmeterForm = () => {
@@ -64,24 +94,40 @@ const CRFormulario: React.FC = () => {
       }
       // validacao
       if (flgValido) {
-        // nova linha
-        const linha: PropsAdicao = {
-          contato: {
+        // variavel temp
+        let flgVoltaRota: boolean = false
+        // verifica se esta editando ou inserindo
+        if (flgEditando) {
+          // linha atual
+          const linhaAtual: ClsContato = {
             id: 0,
             Nome: strNome,
             Email: strEmail,
             Contato: strContato,
             Selecionado: false
-          },
-          FlgAdicionado: false
+          }
+          // edita linha + volta rota
+          despacho(EditarLinhaAcao(linhaAtual))
+          flgVoltaRota = true
+        } else {
+          // nova linha
+          const linha: PropsAdicao = {
+            contato: {
+              id: 0,
+              Nome: strNome,
+              Email: strEmail,
+              Contato: strContato,
+              Selecionado: false
+            },
+            FlgAdicionado: false
+          }
+          // adciona linha
+          despacho(AdicionarLinhaAcao(linha))
+          // validacao
+          flgVoltaRota = linha.FlgAdicionado
         }
-        // adciona linha
-        despacho(AdicionarLinhaAcao(linha))
-        // validacao
-        if (linha.FlgAdicionado) {
-          // volta rota
-          NavegarEntreRotas('/')
-        }
+        // validacao + volta p/ rota anterior
+        if (flgVoltaRota) NavegarEntreRotas('/')
       }
     }
   }

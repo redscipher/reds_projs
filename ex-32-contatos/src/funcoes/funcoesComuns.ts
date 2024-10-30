@@ -69,10 +69,14 @@ function EditarContato(
   if (itemEdicao) {
     // efetua edicao
     const idx = estado.itens.findIndex((item) => item === itemEdicao)
+    // salva id
+    const idSalvo = estado.itens[idx].id
     // altera contato
     estado.itens[idx] = acao.payload
     // desmarca contato
     estado.itens[idx].Selecionado = false
+    // retorna id
+    estado.itens[idx].id = idSalvo
   } else {
     alert('Aviso: Marque o checkbox da linha que deseja remover.')
   }
