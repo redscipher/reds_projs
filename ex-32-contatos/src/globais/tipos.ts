@@ -4,6 +4,7 @@ import ClsContato from './classes'
 // tipos
 type TContatos = {
   itens: ClsContato[]
+  flgEditando?: boolean
 }
 
 type PropsAdicao = {

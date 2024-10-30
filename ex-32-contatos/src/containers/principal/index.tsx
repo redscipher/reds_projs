@@ -4,7 +4,10 @@ import * as E from './estilos'
 import CRTabAgenda from '../componentes/tabela'
 import { CSBotaoAdc, CSBotaoDel } from '../../globais/globais'
 import { useDispatch } from 'react-redux'
-import { RemoverLinhaAcao } from '../../armazem/redutores/contatos'
+import {
+  MarcarEdicaoAdicaoAcao,
+  RemoverLinhaAcao
+} from '../../armazem/redutores/contatos'
 
 // tipo
 type Props = {
@@ -26,10 +29,18 @@ const CRPrincipal = (_Props: Props) => {
               <CRTabAgenda />
             </div>
             <div className="col-md-4 col-12">
-              <CSBotaoAdc type="button" to="/cadastro">
+              <CSBotaoAdc
+                type="button"
+                to="/cadastro"
+                onClick={() => despacho(MarcarEdicaoAdicaoAcao(false))}
+              >
                 Adicionar
               </CSBotaoAdc>
-              <E.CSBotaoEditar type="button" to="/cadastro">
+              <E.CSBotaoEditar
+                type="button"
+                to="/cadastro"
+                onClick={() => despacho(MarcarEdicaoAdicaoAcao(true))}
+              >
                 Editar
               </E.CSBotaoEditar>
               <CSBotaoDel

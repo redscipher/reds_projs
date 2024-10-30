@@ -11,7 +11,8 @@ import ClsContato from '../../globais/classes'
 
 // objeto contatos
 const contatos: TContatos = {
-  itens: []
+  itens: [],
+  flgEditando: false
 }
 
 // cria um 'slice'/'actionCreator' que controla as 'actions'
@@ -35,6 +36,9 @@ const contatosFatia = createSlice({
     },
     EditarLinhaAcao: (estado, acao: PayloadAction<ClsContato>) => {
       return EditarContato(estado, acao)
+    },
+    MarcarEdicaoAdicaoAcao: (estado, acao: PayloadAction<boolean>) => {
+      estado.flgEditando = acao.payload
     }
   }
 })
@@ -46,5 +50,6 @@ export const {
   DesmarcarLinhasAcao,
   AdicionarLinhaAcao,
   RemoverLinhaAcao,
-  EditarLinhaAcao
+  EditarLinhaAcao,
+  MarcarEdicaoAdicaoAcao
 } = contatosFatia.actions
