@@ -6,5 +6,10 @@ type TContatos = {
   itens: ClsContato[]
 }
 
+type PropsAdicao = {
+  contato: ClsContato
+  FlgAdicionado: boolean
+}
+
 // exportacoes
-export type { TContatos }
+export type { TContatos, PropsAdicao }

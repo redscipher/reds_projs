@@ -3,6 +3,8 @@ import { ReactNode } from 'react'
 import * as E from './estilos'
 import CRTabAgenda from '../componentes/tabela'
 import { CSBotaoAdc, CSBotaoDel } from '../../globais/globais'
+import { useDispatch } from 'react-redux'
+import { RemoverLinhaAcao } from '../../armazem/redutores/contatos'
 
 // tipo
 type Props = {
@@ -11,6 +13,9 @@ type Props = {
 
 // componente
 const CRPrincipal = (_Props: Props) => {
+  // cria o despacho
+  const despacho = useDispatch()
+
   // def retorno
   return (
     <div className="container-fluid">
@@ -27,7 +32,12 @@ const CRPrincipal = (_Props: Props) => {
               <E.CSBotaoEditar type="button" to="/cadastro">
                 Editar
               </E.CSBotaoEditar>
-              <CSBotaoDel type="button">Remover</CSBotaoDel>
+              <CSBotaoDel
+                type="button"
+                onClick={() => despacho(RemoverLinhaAcao())}
+              >
+                Remover
+              </CSBotaoDel>
             </div>
           </E.SCPrincipal>
         </div>

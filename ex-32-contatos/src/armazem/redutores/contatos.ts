@@ -1,26 +1,15 @@
 // importacoes
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { DesmarcarLinhas } from '../../funcoes/funcoesComuns'
-import { TContatos } from '../../globais/tipos'
+import {
+  DesmarcarLinhas,
+  AdicionarContato,
+  RemoverContato
+} from '../../funcoes/funcoesComuns'
+import { PropsAdicao, TContatos } from '../../globais/tipos'
 
 // objeto contatos
 const contatos: TContatos = {
-  itens: [
-    {
-      id: 1,
-      Nome: 'Teste',
-      Email: 'email@hotmail.com',
-      Contato: '34999999999',
-      Selecionado: false
-    },
-    {
-      id: 2,
-      Nome: 'Testes2',
-      Email: 'email@gmail.com',
-      Contato: '34988888888',
-      Selecionado: false
-    }
-  ]
+  itens: []
 }
 
 // cria um 'slice'/'actionCreator' que controla as 'actions'
@@ -35,6 +24,12 @@ const contatosFatia = createSlice({
       acao: PayloadAction<{ id: number; checado: boolean }>
     ) => {
       return DesmarcarLinhas(estado, acao)
+    },
+    AdicionarLinhaAcao: (estado, acao: PayloadAction<PropsAdicao>) => {
+      return AdicionarContato(estado, acao)
+    },
+    RemoverLinhaAcao: (estado) => {
+      return RemoverContato(estado)
     }
   }
 })
@@ -42,4 +37,5 @@ const contatosFatia = createSlice({
 // exportacoes : redutor
 export default contatosFatia.reducer
 // acoes
-export const { DesmarcarLinhasAcao } = contatosFatia.actions
+export const { DesmarcarLinhasAcao, AdicionarLinhaAcao, RemoverLinhaAcao } =
+  contatosFatia.actions

@@ -4,9 +4,20 @@ import { CSBotao } from '../../../globais/globais'
 import FuncoesComuns from '../../../funcoes/funcoesComunsComp'
 // jquery
 import $ from 'jquery'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { AdicionarLinhaAcao } from '../../../armazem/redutores/contatos'
+import { PropsAdicao } from '../../../globais/tipos'
 
 // componente
 const CRFormulario: React.FC = () => {
+  // estados p/ controlar os valores digitados
+  const [strNome, setStrNome] = useState('')
+  const [strEmail, setStrEmail] = useState('')
+  const [strContato, setStrContato] = useState('')
+  // despacho
+  const despacho = useDispatch()
+
   // funcoes importadas
   const { NavegarEntreRotas } = FuncoesComuns()
 
@@ -53,7 +64,24 @@ const CRFormulario: React.FC = () => {
       }
       // validacao
       if (flgValido) {
-        NavegarEntreRotas('/')
+        // nova linha
+        const linha: PropsAdicao = {
+          contato: {
+            id: 0,
+            Nome: strNome,
+            Email: strEmail,
+            Contato: strContato,
+            Selecionado: false
+          },
+          FlgAdicionado: false
+        }
+        // adciona linha
+        despacho(AdicionarLinhaAcao(linha))
+        // validacao
+        if (linha.FlgAdicionado) {
+          // volta rota
+          NavegarEntreRotas('/')
+        }
       }
     }
   }
@@ -77,7 +105,9 @@ const CRFormulario: React.FC = () => {
                   className="form-control"
                   id="id-nome"
                   placeholder="Nome completo"
+                  value={strNome}
                   required
+                  onChange={(e) => setStrNome(e.target.value)}
                 />
                 <label htmlFor="id-nome">Nome completo</label>
                 <div className="valid-feedback text-white">Certo!</div>
@@ -90,7 +120,9 @@ const CRFormulario: React.FC = () => {
                   className="form-control"
                   id="id-email"
                   placeholder="email@exemplo.com"
+                  value={strEmail}
                   required
+                  onChange={(e) => setStrEmail(e.target.value)}
                 />
                 <label htmlFor="id-email">E-mail</label>
                 <div className="valid-feedback text-white">Certo!</div>
@@ -103,7 +135,9 @@ const CRFormulario: React.FC = () => {
                   className="form-control"
                   id="id-contato"
                   placeholder="(DD) 9xxxx-xxxx"
+                  value={strContato}
                   required
+                  onChange={(e) => setStrContato(e.target.value)}
                 />
                 <label htmlFor="id-contato">
                   Contato &apos;digite somente numeros&apos;
