@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+    //== configuracoes do typescript
+    "react/prop-types": "off",    // configuracao relacionado a tipagem de propriedades antes da utilizacao do typescript
+    "react/react-in-jsx-scope": "off",    // desativa obrigatoriedade de importacao do 'react' nos arquivos
+    "@typescript-eslint/explicit-module-boundary-types": "off"   // eh uma regra do ESLint para TypeScript que forca a explicitacao dos tipos de retorno dos metodos
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
