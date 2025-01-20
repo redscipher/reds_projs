@@ -4,79 +4,112 @@ import time
 import csv
 import random
 import concurrent.futures
-#biblioteca p/ simular um navegador
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup       #biblioteca p/ simular um navegador
 
-# global headers to be used for requests
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'}
+#region: variaveis
+#cabecalhos globais p/ ser usuado nas requisicoes
+cabecalhos = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'}
+#inteiros
+MAX_THREADS = 30
+#
+#endregion
 
-MAX_THREADS = 10
-
-def extract_movie_details(movie_link):
-    time.sleep(random.uniform(0, 0.2))
-    response = requests.get(movie_link, headers=headers)
-    movie_soup = BeautifulSoup(response.content, 'html.parser')
-
-    if movie_soup is not None:
-        title = None
-        date = None
-        
-        # Encontrando a seção específica
-        page_section = movie_soup.find('section', attrs={'class': 'ipc-page-section'})
-        
-        if page_section is not None:
-            # Encontrando todas as divs dentro da seção
-            divs = page_section.find_all('div', recursive=False)
-            
-            if len(divs) > 1:
-                target_div = divs[1]
-                
-                # Encontrando o título do filme
-                title_tag = target_div.find('h1')
-                if title_tag:
-                    title = title_tag.find('span').get_text()
-                
-                # Encontrando a data de lançamento
-                date_tag = target_div.find('a', href=lambda href: href and 'releaseinfo' in href)
-                if date_tag:
-                    date = date_tag.get_text().strip()
-                
-                # Encontrando a classificação do filme
-                rating_tag = movie_soup.find('div', attrs={'data-testid': 'hero-rating-bar__aggregate-rating__score'})
-                rating = rating_tag.get_text() if rating_tag else None
-                
-                # Encontrando a sinopse do filme
-                plot_tag = movie_soup.find('span', attrs={'data-testid': 'plot-xs_to_m'})
-                plot_text = plot_tag.get_text().strip() if plot_tag else None
-                
-                with open('movies.csv', mode='a', newline='', encoding='utf-8') as file:
-                    movie_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                    if all([title, date, rating, plot_text]):
-                        print(title, date, rating, plot_text)
-                        movie_writer.writerow([title, date, rating, plot_text])
-
-def extract_movies(soup):
-    movies_table = soup.find('div', attrs={'data-testid': 'chart-layout-main-column'}).find('ul')
-    movies_table_rows = movies_table.find_all('li')
-    movie_links = ['https://imdb.com' + movie.find('a')['href'] for movie in movies_table_rows]
-
-    threads = min(MAX_THREADS, len(movie_links))
-    with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
-        executor.map(extract_movie_details, movie_links)
-
+#region: metodos
+#principal
 def main():
-    start_time = time.time()
+    #variaveis: nulas
+    resposta = None
+    #frases (strings)
+    str_filmes: str
+    #inteiros
+    tempo_inicial: float; tempo_final: float
+    
+    #inicia temporizador
+    tempo_inicial = time.time()
+    #filmes mais populares do IMDB: url
+    str_filmes = 'https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm'
+    
+    #executa uma requisicao a url dos filmes
+    resposta = requests.get(str_filmes, headers=cabecalhos)
+    #simula o navagedor p/ 'navegar' pelo resultado
+    bsResultado = BeautifulSoup(resposta.content, 'html.parser')
 
-    # IMDB Most Popular Movies - 100 movies
-    popular_movies_url = 'https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm'
-    response = requests.get(popular_movies_url, headers=headers)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    #funcao p/ extrair os filmes da url passada
+    extrai_filmes(bsResultado)
 
-    # Main function to extract the 100 movies from IMDB Most Popular Movies
-    extract_movies(soup)
+    #finalizacao do temporizador
+    tempo_final = time.time()
+    print('Tempo execução: ', tempo_final - tempo_inicial)
+    
+def extrai_filmes(sopa):
+    #busca por uma div, com um atribuito 'data-testid', e retorna uma lista 'ul'
+    tabela_filmes = sopa.find('div', attrs={'data-testid': 'chart-layout-main-column'}).find('ul')
+    #retorna os itens 'li'
+    linhas_tabela = tabela_filmes.find_all('li')
+    
+    #lista links dos filmes: tag 'a' atributo 'href'
+    links = ['https://imdb.com' + filme.find('a')['href'] for filme in linhas_tabela]
 
-    end_time = time.time()
-    print('Total time taken: ', end_time - start_time)
+    #define as threads p/ executar
+    threads = min(MAX_THREADS, len(links))
+    #cria concorrente p/ execucao de multithreads
+    with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
+        executor.map(extrai_detalhes_filme, links)
 
+def extrai_detalhes_filme(link):
+    #variaveis: nulas
+    resposta = None
+    #espera
+    time.sleep(random.uniform(0, 0.2))
+    #executa requisicao
+    resposta = requests.get(link, headers=cabecalhos)
+    filme_sopa = BeautifulSoup(resposta.content, 'html.parser')     #simula o navagedor p/ 'navegar' pelo resultado
+
+    #validacao
+    if filme_sopa is not None:
+        #resete variaveis
+        titulo = None
+        data = None
+        
+        #encontrando a sessao especiffica
+        sessao_tag = filme_sopa.find('section', attrs={'class': 'ipc-page-section'})
+        #validacao
+        if sessao_tag is not None:
+            #encontrando todas as divs dentro da sessao
+            divs = sessao_tag.find_all('div', recursive=False)
+            #validacao
+            if len(divs) > 1:
+                div_tag = divs[1]
+                
+                #encontrando o titulo do filme
+                h1_tag = div_tag.find('h1')
+                if h1_tag:
+                    titulo = h1_tag.find('span').get_text()
+                
+                #encontrando a data de lançamento
+                data_tag = div_tag.find('a', href=lambda href: href and 'releaseinfo' in href)
+                if data_tag:
+                    data = data_tag.get_text().strip()
+                
+                #encontrando a classificacao do filme
+                classe_tag = filme_sopa.find('div', attrs={'data-testid': 'hero-rating-bar__aggregate-rating__score'})
+                nota = classe_tag.get_text() if classe_tag else None
+                
+                #encontrando a sinopse do filme
+                plot_tag = filme_sopa.find('span', attrs={'data-testid': 'plot-xs_to_m'})
+                plot_texto = plot_tag.get_text().strip() if plot_tag else None
+                
+                #comeca escrita de arquivo
+                with open('movies.csv', mode='a', newline='', encoding='utf-8') as arq:
+                    #cria o escritor
+                    escritor = csv.writer(arq, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                    #validacao
+                    if all([titulo, data, nota, plot_texto]):
+                        #efetua escrita
+                        print(titulo, data, nota, plot_texto)
+                        escritor.writerow([titulo, data, nota, plot_texto])
+#endregion
+
+#inicializacao principal do app
 if __name__ == '__main__':
     main()
