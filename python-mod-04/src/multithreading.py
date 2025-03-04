@@ -110,6 +110,6 @@ def extrai_detalhes_filme(link):
                         escritor.writerow([titulo, data, nota, plot_texto])
 #endregion
 
-#inicializacao principal do app python
+#inicializacao principal do app python pull
 if __name__ == '__main__':
     main()
